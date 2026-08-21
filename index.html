@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 工具全景图 · 从编程助手到能力全景</title>
+<meta name="description" content="9 大板块、42 款 AI 工具全景地图：编程助手、办公智能体、智能体框架、图像/视频/语音生成、主流大模型、MCP/Skills 插件生态与线上服务平台，含选型决策表、能力排行与完整能力栈架构图。">
+<meta name="keywords" content="AI工具,AI编程助手,Claude Code,Cursor,GPT-5,大模型,智能体,MCP,Skills,图像生成,视频生成,语音合成">
+<meta name="author" content="AI 工具全景图">
+<meta name="theme-color" content="#10b981">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 工具全景图 · 从编程助手到能力全景">
+<meta property="og:description" content="9 大板块、42 款 AI 工具，从编程助手到能力栈架构的交互式全景地图。">
+<meta property="og:site_name" content="AI 工具全景图">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 工具全景图 · 从编程助手到能力全景">
+<meta name="twitter:description" content="9 大板块、42 款 AI 工具，从编程助手到能力栈架构的交互式全景地图。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -271,6 +283,7 @@ kbd{font-family:var(--mono);font-size:11px;background:var(--kbd-bg);border:1px s
 .code-bar span{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:#64748b;text-transform:uppercase}
 .copy{font-family:var(--mono);font-size:10.5px;color:#94a3b8;background:#1e293b;border:1px solid #334155;border-radius:5px;padding:2px 10px;transition:.2s}
 .copy:hover{color:#fff;border-color:var(--acc)}
+.copy.copied{color:#34d399;border-color:#34d399}
 .code pre{padding:12px 16px;overflow-x:auto}
 .code code{font-family:var(--mono);font-size:12.4px;line-height:1.8;color:var(--code-ink);white-space:pre}
 .cm{color:var(--code-com)}.hl2{color:var(--code-hl)}.ok{color:#34d399}
@@ -384,6 +397,13 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
 .foot a{display:block;font-size:12.5px;color:var(--ink2);padding:2px 0;transition:.18s}
 .foot a:hover{color:var(--green-d);transform:translateX(3px)}
 .foot-note{font-family:var(--mono);font-size:10px;color:var(--ink3);border-top:1px dashed var(--line);padding-top:14px;line-height:1.9}
+
+/* 搜索空状态 */
+.empty-state{display:none;margin:16px 0 32px;padding:44px 20px;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:14px}
+.empty-state.on{display:block}
+.empty-state .empty-ico{font-size:34px;margin-bottom:12px;opacity:.7}
+.empty-state p{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.empty-state span{font-size:12.5px;color:var(--ink3)}
 
 /* totop */
 .totop{position:fixed;right:20px;bottom:24px;width:42px;height:42px;border-radius:11px;background:var(--surface);color:var(--green-d);font-size:16px;z-index:100;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 8px 22px -10px rgba(15,23,42,.25);border:1px solid var(--line)}
@@ -691,11 +711,16 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
 </section>
 <div class="stats" id="stats"></div>
 <div id="main-sections"></div>
+<div class="empty-state" id="empty-state">
+  <div class="empty-ico">🔍</div>
+  <p>没有找到匹配的工具</p>
+  <span>换个关键词试试，或按 <kbd>Esc</kbd> 清空搜索</span>
+</div>
 <footer class="foot">
   <div class="foot-grid">
     <div><h6>板块索引</h6><div id="foot-index-a"></div></div>
     <div><h6>板块索引 <small>· CONT</small></h6><div id="foot-index-b"></div></div>
-    <div><h6>关于</h6><a href="#">更新于 2026-08-21</a><a href="#">价格与参数以官方为准</a><a href="#">按 / 聚焦搜索</a></div>
+    <div><h6>关于</h6><a href="#top" data-totop>更新于 2026-08-21</a><a href="#top" data-totop>价格与参数以官方为准</a><a href="#top" data-totop>按 / 聚焦搜索</a></div>
   </div>
   <p class="foot-note">AI 工具全景图 · AI TOOLKIT MAP 2026 —— Built with ♥ and a lot of tokens.</p>
 </footer>
@@ -835,7 +860,7 @@ function render(){
     ${DATA.map(s=>`<a href="#${s.id}"><span class="n">${s.num}</span>${esc(s.title)}</a>`).join('')}
   `;
   $('#side-foot').innerHTML = `
-    <b>●</b> ${esc(META.updated)} 更新<br>${DATA.length} 大板块 · ${META.tools} 款工具<br>持续探索最佳实践
+    <b>●</b> ${esc(META.updated)} 更新 · v${esc(META.version)}<br>${DATA.length} 大板块 · ${META.tools} 款工具<br>持续探索最佳实践
     <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="切换主题">
       <span class="tt-lab"><span class="tt-ico">☀</span>深色模式</span>
       <span class="switch"></span>
@@ -925,8 +950,12 @@ document.addEventListener('click', e=>{
 async function copyText(text, btn){
   try { await navigator.clipboard.writeText(text); }
   catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
-  const old = btn.textContent; btn.textContent = '✓';
-  setTimeout(()=>{ btn.textContent = old; btn.classList.remove('copied'); }, 1200);
+  /* 反馈：.copy 按钮临时改文案；data-copy 的 <code> 仅加 .copied 类（改变背景，不改原文） */
+  const isCopyBtn = btn.classList.contains('copy');
+  const old = btn.textContent;
+  if (isCopyBtn){ btn.textContent = '✓ 已复制'; btn.classList.add('copied'); }
+  else { btn.classList.add('copied'); }
+  setTimeout(()=>{ btn.textContent = old; btn.classList.remove('copied'); }, 1400);
 }
 
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.1});
@@ -988,6 +1017,9 @@ function initApp(){
       if (v && hit){ n++; if(!t.classList.contains('open')){ t.classList.add('open'); syncHead(t); auto.add(t); } }
     });
     qc.textContent = v ? `▸ ${n} 个匹配结果` : '';
+    /* 空状态：有搜索词但无匹配时显示提示，否则隐藏 */
+    const empty = $('#empty-state');
+    if (empty) empty.classList.toggle('on', !!v && n === 0);
     if (!v){ auto.forEach(t=>{ t.classList.remove('open'); syncHead(t); }); auto.clear(); }
   });
   addEventListener('keydown', e=>{
@@ -1023,6 +1055,11 @@ addEventListener('scroll', ()=>{
   totop.tabIndex = show ? 0 : -1;
 }, {passive:true});
 totop.addEventListener('click', ()=>scrollTo({top:0, behavior: reduce?'auto':'smooth'}));
+/* footer「关于」占位链接：拦截默认跳转，改为平滑回顶（与返回顶部一致） */
+document.addEventListener('click', e=>{
+  const a = e.target.closest('[data-totop]');
+  if (a){ e.preventDefault(); scrollTo({top:0, behavior: reduce?'auto':'smooth'}); }
+});
 
 const burger = $('#burger'), side = $('#side'), scrim = $('#scrim');
 function toggleSide(v){

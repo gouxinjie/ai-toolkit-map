@@ -671,7 +671,7 @@
       {
        "type": "code",
        "lang": "bash · webui",
-       "code": "git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui\ncd stable-diffusion-webui && ./webui.sh   # Windows 用 webui-user.bat\n# 扩展页安装 ControlNet，模型放 extensions/sd-webui-controlnet/models\n# LoRA 放 models/Lora，提示词用 &lt;lora:xxx:0.8&gt; 调用"
+       "code": "git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui\ncd stable-diffusion-webui && ./webui.sh   # Windows 用 webui-user.bat\n# 扩展页安装 ControlNet，模型放 extensions/sd-webui-controlnet/models\n# LoRA 放 models/Lora，提示词用 <lora:xxx:0.8> 调用"
       }
      ],
      "case": "电商模特换装：ControlNet（OpenPose）锁定模特姿势 + 线稿锁定服装版型，批量替换 30 套服装与背景，拍摄成本从数万元压到一台 4090 的电费。"
@@ -1069,7 +1069,7 @@
       {
        "type": "code",
        "lang": "bash · websocket 流式",
-       "code": "wscat -c wss://api.cartesia.ai/tts/websocket?api_key=$KEY\n# 发送 JSON：{ model: \"sonic-3.5\", voice: \"xxx\", stream: true }\n# 边生成边播放，首字节 &lt; 90ms"
+       "code": "wscat -c wss://api.cartesia.ai/tts/websocket?api_key=$KEY\n# 发送 JSON：{ model: \"sonic-3.5\", voice: \"xxx\", stream: true }\n# 边生成边播放，首字节 < 90ms"
       }
      ],
      "case": "语音客服改造：把旧 TTS 换成 Sonic 3.5 后，用户说完话到听到回复的间隔从 1.8s 降到 0.4s，对话打断率下降 35%，满意度评分显著回升。"
