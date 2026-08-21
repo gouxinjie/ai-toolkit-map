@@ -28,6 +28,7 @@ jobs:
           SOURCE: ./
           # 排除不需要上传的文件/目录
           EXCLUDE: ".github/,/.git/,/.gitignore,README.md,docs/"
-          # 部署前先清空目标目录，避免残留旧文件
-          # -o StrictHostKeyChecking=no 跳过首次连接的 host key 确认
-          ARGS: "-avz --delete -o StrictHostKeyChecking=no"
+          # --delete: 部署前先清空目标目录，避免残留旧文件
+          # 注意：不要在这里写 -o/StrictHostKeyChecking（那是 ssh 参数，
+          #       ssh-deploy 已自动通过 --rsh 附带，写在 rsync 末尾会报错）
+          ARGS: "-avz --delete"
