@@ -323,10 +323,11 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
 @media (max-width:640px){
   .sec:not(:first-child){margin-top:44px}
   .sec-head{padding-left:12px;margin-bottom:20px}
-  .stats{grid-template-columns:1fr}
-  .stat{border-left:none !important;border-top:1px solid var(--line)}
-  .stat:first-child{border-top:none}
-  .stat{padding:14px 18px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat{padding:13px 14px}
+  .stat{border-left:none !important}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:none}
   .tool-head{grid-template-columns:auto 1fr auto;gap:10px}
   .chips{display:none}
   .d-row{grid-template-columns:1fr;gap:4px}
