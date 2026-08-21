@@ -335,6 +335,59 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
   .rb{grid-template-columns:76px 1fr 26px}
   .top10 li{grid-template-columns:28px 1fr;gap:8px}
   .rk-tag{display:none}
+
+  /* === 移动端兼容性修复 === */
+  /* 1. 代码块: 允许长行换行,避免横向溢出 */
+  .code pre{white-space:pre-wrap;word-break:break-word;overflow-x:hidden}
+  .code code{white-space:pre-wrap;word-break:break-word;font-size:11.8px}
+  /* 2. 表格: 缩小 min-width,降低横向滚动区域 */
+  table{min-width:480px}
+  .tbl-wrap{border-radius:10px}
+  th,td{padding:9px 10px}
+  /* 3. casebox 与子区域: 文字不溢出 */
+  .casebox, .sub p, .sub ul li{overflow-wrap:anywhere;word-break:break-word}
+  .verdict p, .verdict h4{overflow-wrap:anywhere}
+  /* 4. 板块编号缩小, 避免与标题冲突 */
+  .sec-num{font-size:clamp(34px,4.5vw,44px);letter-spacing:-1px;line-height:.9}
+  .sec-tt h2{font-size:18px}
+  .sec-head{flex-wrap:wrap}
+  /* 5. 决策表: 单列下用下行箭头,更直观 */
+  .d-row{grid-template-columns:1fr;gap:6px;padding:14px 16px}
+  .d-row .arr{transform:none;justify-self:start;color:var(--acc);font-weight:600;display:flex;align-items:center;gap:4px;font-size:0;line-height:1}
+  .d-row .arr::before{content:"\2193";font-size:16px;line-height:1}
+  .d-row .need{color:var(--ink2);font-size:13px;line-height:1.6}
+  .d-row .pick{color:var(--ink);font-size:13.5px;line-height:1.65}
+  /* 6. 顶栏 z-index 修正,避免与内容层叠 */
+  .topbar{z-index:130}
+  /* 7. stats 数字视觉优化: 缩小数字字号 */
+  .stat .num{font-size:24px}
+  /* 8. tool pad 缩小 */
+  .tool-pad{padding:4px 14px 18px}
+  .tool-head{padding:12px 14px;gap:10px}
+  .tool-ico{width:38px;height:38px;font-size:13px}
+  /* 9. 标题与 lede 字号 */
+  .mast h1{font-size:clamp(26px,6vw,36px);line-height:1.32}
+  .lede{font-size:14px}
+  .hero-term{min-height:240px}
+  .term-body{min-height:170px;font-size:12px;padding:14px 16px 4px}
+  .term{padding-bottom:18px}
+  /* 10. mast-badges 紧凑 */
+  .mast-badges{gap:8px;margin-top:18px}
+  .mast-badges i{font-size:11px;padding:6px 12px}
+  /* 11. rank 条目紧凑 */
+  .rank-card{padding:12px 14px}
+  .rb{grid-template-columns:72px 1fr 24px;margin-bottom:6px;font-size:12px}
+  /* 12. footer 紧凑 */
+  .foot{margin-top:36px;padding:18px 0 8px}
+  .foot-grid{gap:18px}
+  .foot h6{font-size:9.5px;margin-bottom:6px}
+  .foot a{font-size:12px}
+  /* 13. 防止页面整体水平滚动 */
+  body{overflow-x:hidden}
+  /* 14. 副标题描述在板块头不溢出 */
+  .sec-tt p{font-size:12px;line-height:1.6}
+  /* 15. 表格 6 列时,降低字号 */
+  th, td{font-size:12.5px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
