@@ -145,19 +145,25 @@ img{max-width:100%;display:block}
 .tool:hover{box-shadow:0 10px 28px -14px rgba(15,23,42,.16);transform:translateY(-1px);border-color:transparent}
 .tool:hover::before{opacity:1}
 .tool.hide{display:none}
-.tool-head{width:100%;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:14px;padding:14px 18px;text-align:left;cursor:pointer}
-.tool-ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-family:var(--latin);font-weight:700;font-size:14px;color:#fff;background:var(--acc);box-shadow:0 4px 10px -3px currentColor;flex-shrink:0}
-.tool-name{font-size:15px;font-weight:600;color:var(--ink);line-height:1.35}
-.tool-name em{display:block;font-style:normal;font-weight:400;font-size:12px;color:var(--ink3);margin-top:2px}
-.chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
-.chip{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.3px;padding:3px 8px;border-radius:99px;border:1px solid;white-space:nowrap}
-.k-free{color:#059669;border-color:#a7f3d0;background:#ecfdf5}
-.k-paid{color:#d97706;border-color:#fed7aa;background:#fff7ed}
-.k-oss{color:#0e7490;border-color:#a5f3fc;background:#ecfeff}
-.k-kind{color:#475569;border-color:#e2e8f0;background:#f8fafc}
-.chev{font-size:18px;color:var(--ink3);transition:transform .35s,color .2s}
-.tool-head:hover .chev,.tool.open .chev{color:var(--acc)}
-.tool.open .chev{transform:rotate(90deg)}
+.tool-head{width:100%;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:14px;padding:14px 18px;text-align:left;cursor:pointer;transition:background .25s}
+.tool-head:hover,.tool.open .tool-head{background:color-mix(in srgb,var(--acc) 5%,#fff)}
+.tool-head:active{background:color-mix(in srgb,var(--acc) 9%,#fff)}
+.tool-head:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
+.tool-ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-family:var(--latin);font-weight:700;font-size:14px;color:#fff;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 100%,#fff 12%) 0%,var(--acc) 100%);box-shadow:0 3px 8px -2px color-mix(in srgb,var(--acc) 30%,transparent);flex-shrink:0}
+.tool-head:hover .tool-ico{transform:none;box-shadow:0 3px 8px -2px color-mix(in srgb,var(--acc) 30%,transparent)}
+.tool-name{font-size:15px;font-weight:600;color:var(--ink);line-height:1.35;min-width:0}
+.tool-name em{display:block;font-style:normal;font-weight:400;font-size:12px;color:var(--ink3);margin-top:2px;transition:color .2s}
+.tool-head:hover .tool-name em{color:var(--ink2)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.chip{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.3px;padding:3px 9px;border-radius:99px;border:1px solid;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.7);transition:transform .18s,box-shadow .18s,border-color .18s;line-height:1.6}
+.chip:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 2px 5px -2px rgba(15,23,42,.14)}
+.k-free{color:#047857;border-color:#a7f3d0;background:#ecfdf5}
+.k-paid{color:#b45309;border-color:#fed7aa;background:#fff7ed}
+.k-oss{color:#155e75;border-color:#a5f3fc;background:#ecfeff}
+.k-kind{color:#64748b;border-color:#e2e8f0;background:#f1f5f9}
+.chev{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:15px;line-height:1;color:var(--ink3);background:var(--line2);flex-shrink:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),color .2s,background .2s,box-shadow .2s}
+.tool-head:hover .chev{color:var(--acc);background:color-mix(in srgb,var(--acc) 10%,#fff)}
+.tool.open .chev{color:#fff;background:var(--acc);box-shadow:none;transform:rotate(90deg)}
 .tool-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1)}
 .tool.open .tool-body{grid-template-rows:1fr}
 .tool-inner{overflow:hidden;min-height:0}
@@ -185,7 +191,7 @@ kbd{font-family:var(--mono);font-size:11px;background:#f1f5f9;border:1px solid v
 /* table */
 .tbl-wrap{overflow-x:auto;margin:18px 0 8px;border:1px solid var(--line);border-radius:13px;background:#fff;box-shadow:0 6px 18px -12px rgba(15,23,42,.08)}
 table{width:100%;border-collapse:collapse;min-width:680px}
-th{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc);background:color-mix(in srgb,var(--acc) 9%,#fff);padding:11px 14px;text-align:left;border-bottom:1px solid color-mix(in srgb,var(--acc) 25%,#fff);white-space:nowrap;font-weight:700}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc);background:color-mix(in srgb,var(--acc) 9%,#fff);padding:11px 14px;text-align:left;border-bottom:1px solid color-mix(in srgb,var(--acc) 25%,#fff);white-space:nowrap;font-weight:700}
 td{font-size:13px;padding:10px 14px;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top}
 tr:last-child td{border-bottom:none}
 tbody tr{transition:.18s}
@@ -594,7 +600,6 @@ function render(){
 
   $('#foot-index').innerHTML = DATA.map(s=>`<a href="#${s.id}">${s.num} · ${esc(s.title)}</a>`).join('');
 
-  $$('.tool').forEach((t,i)=>{ if(i<1) t.classList.add('open'); });
   syncAll();
 }
 

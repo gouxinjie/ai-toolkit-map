@@ -12,5 +12,6 @@ Desktop.ini
 *.log
 *.tmp
 node_modules/
+.playwright-cli/
 .gitcommit.txt
 _msg.txt
