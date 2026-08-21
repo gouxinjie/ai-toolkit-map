@@ -39,13 +39,29 @@ python -m http.server 8080
 
 ---
 
+## 一键同步到 GitHub + Gitee
+
+项目配置为同时推送 **GitHub** 与 **Gitee** 两个远程仓库。
+
+- Windows：双击 **`push.bat`**（或命令行 `push.bat "提交说明"`）
+- macOS / Linux：`./push.sh "提交说明"`
+
+脚本会依次执行 `git add .` → `git commit` → `git push`，将改动同步到两个仓库。不传参数时自动使用当前时间作为提交信息。
+
+> 原理：`git remote` 为 `origin` 配置了两个 push 地址（GitHub + Gitee），单次 `git push origin` 即可推送全部。
+
+---
+
 ## 项目结构
 
 ```
 ai-toolkit-map/
 ├── index.html        # 单页应用主体（样式 + 结构 + 数据 + 脚本）
 ├── aihot_data.json   # 工具数据的独立 JSON 源文件（供维护参考）
-└── README.md         # 项目说明
+├── README.md         # 项目说明
+├── push.bat          # Windows 一键提交并推送脚本（GitHub + Gitee）
+├── push.sh           # macOS / Linux 一键提交并推送脚本
+└── .gitignore        # 忽略系统 / 编辑器 / 临时文件
 ```
 
 ---
