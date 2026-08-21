@@ -1,8 +1,0 @@
-修正数据准确性与时效性
-
-- 大模型：GPT-5 上下文与价格（1.1M / $5-30）、DeepSeek V4 与 Kimi K2 价格修正
-- 视频：Sora 2.0 时长约25秒、可灵 3.0 单次15秒
-- MCP：Brave Search / Sequential Thinking 包名迁移更新
-- 图像：Flux 更新为 Flux 2（Pro 支持6K），Midjourney 补充订阅档位
-- 架构图：修正 arch.cls 层级类名（l4-l0），恢复配色
-- 日期：更新至 2026-08-21，版本号升至 2.8

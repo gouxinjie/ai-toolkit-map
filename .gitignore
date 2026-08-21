@@ -12,3 +12,4 @@ Desktop.ini
 *.log
 *.tmp
 node_modules/
+.gitcommit.txt
