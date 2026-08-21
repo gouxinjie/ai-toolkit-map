@@ -117,4 +117,12 @@ ai-toolkit-map/
 
 ---
 
+## 开源协议
+
+本项目基于 **MIT License** 开源，详见 [LICENSE](LICENSE)。
+
+你可以自由使用、修改、分发本项目代码，仅需保留版权声明与本许可协议。页面中涉及的各工具名称、商标与产品归属其各自所有者，本项目的引用仅作学习与选型参考。
+
+---
+
 *AI 工具全景图 · AI TOOLKIT MAP 2026 —— Built with ♥ and a lot of tokens.*
