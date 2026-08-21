@@ -5,7 +5,7 @@
    "num": "01",
    "emoji": "💻",
    "title": "AI 编程助手",
-   "desc": "从终端 CLI 到 AI IDE,7 款主流编程助手的核心命令与真实改造案例",
+   "desc": "从终端 CLI 到 AI IDE,8 款主流编程助手的核心命令与真实改造案例",
    "acc": "--acc:#0a5cff",
    "tools": [
     {
@@ -191,6 +191,34 @@
       }
      ],
      "case": "内网合规开发：代码不出网的硬性要求下，用 OpenCode + Ollama 本地 DeepSeek 搭建内网编程助手，日常重构与单测生成全部离线完成，安全审计一次通过。"
+    },
+    {
+     "search": "",
+     "ico": "CB",
+     "name": "CodeBuddy",
+     "sub": "腾讯云 · 插件 / IDE / CLI 三形态一体",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "IDE/插件/CLI"
+      },
+      {
+       "kind": "k-free",
+       "text": "免费"
+      }
+     ],
+     "intro": "腾讯云出品的全流程 AI 编程工具：插件形态嵌入 VS Code / JetBrains，另有 CodeBuddy IDE 与 CodeBuddy Code（CLI）两种形态。默认搭载混元大模型、可切换 DeepSeek，覆盖补全、单测生成、代码审查与 RAG 知识库，并深度集成 CloudBase / EdgeOne Pages / CloudStudio，从设计稿到部署一站打通。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "VS Code / JetBrains 扩展市场搜索「CodeBuddy」一键安装，登录腾讯云账号即用；",
+        "或下载 CodeBuddy IDE 客户端，进入「对话即编程」的产设研一体化工作台；",
+        "自动化场景启用 CodeBuddy Code（CLI），终端里用自然语言驱动开发与部署；支持混元 / DeepSeek 切换与 MCP 扩展。"
+       ]
+      }
+     ],
+     "case": "设计稿直通上线：设计师在 Figma 交付界面稿后，CodeBuddy 导入设计稿生成页面代码，联调 CloudBase 云函数与数据库，最后部署到 EdgeOne Pages——从设计到可访问的产品，一个工作日内完成，前端只做细节打磨。"
     }
    ],
    "table": {
@@ -250,9 +278,16 @@
       "任意（含本地）",
       "开源",
       "私有化、模型自由"
+     ],
+     [
+      "CodeBuddy",
+      "IDE/插件/CLI",
+      "混元 / DeepSeek",
+      "免费",
+      "腾讯生态、产设研一体"
      ]
-    ],
-    "cap": "▚ 表 1-1 · 七款编程助手横向速览（价格为 2026-08 参考值）"
+     ],
+     "cap": "▚ 表 1-1 · 八款编程助手横向速览（价格为 2026-08 参考值）"
    },
    "verdict": null,
    "decide": null,
@@ -2070,6 +2105,60 @@
      }
     ]
    }
+  },
+  {
+   "id": "platforms",
+   "num": "09",
+   "emoji": "🌐",
+   "title": "线上大模型服务平台",
+   "desc": "许多平台提供大模型 API 服务：注册、充值并创建 API-Key，即可用 API-Key 与 URL 调用平台提供的模型服务。",
+   "acc": "--acc:#ca8a04",
+   "tools": [],
+   "table": {
+    "head": [
+     "平台",
+     "网址",
+     "备注"
+    ],
+    "rows": [
+     [
+      "OpenRouter",
+      "https://openrouter.ai/",
+      "全球主流，含国外模型"
+     ],
+     [
+      "CloseAI",
+      "https://platform.closeai-asia.com/",
+      "亚洲最大，含国外模型"
+     ],
+     [
+      "阿里云百炼",
+      "https://bailian.console.aliyun.com/",
+      "企业端友好"
+     ],
+     [
+      "硅基流动",
+      "https://www.siliconflow.cn/",
+      "性价比高，适合个人"
+     ],
+     [
+      "百度千帆",
+      "https://console.bce.baidu.com/qianfan/overview",
+      "主打百度生态"
+     ],
+     [
+      "火山引擎",
+      "https://console.volcengine.com/ark/",
+      "主打字节多模态生态"
+     ]
+    ],
+    "cap": "▚ 表 9-1 · 线上大模型服务平台速览"
+   },
+   "verdict": null,
+   "decide": null,
+   "rank": null,
+   "top10": null,
+   "arch": null
   }
  ]
 }
