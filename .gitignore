@@ -13,3 +13,4 @@ Desktop.ini
 *.tmp
 node_modules/
 .gitcommit.txt
+_msg.txt
