@@ -13,22 +13,21 @@ jobs:
       - name: Checkout 代码
         uses: actions/checkout@v4
 
-      - name: 部署到阿里云 ECS
-        uses: easingthemes/ssh-deploy@v4.1.0
+      # 用 webfactory/ssh-agent 加载私钥。
+      # 它专门处理多行 OPENSSH 私钥的换行符，能避免 "error in libcrypto" 问题
+      - name: 加载 SSH 私钥
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          # SSH 私钥（GitHub Secrets 中配置）
-          SSH_PRIVATE_KEY: ${{ secrets.ECS_SSH_KEY }}
-          # ECS 服务器信息
-          REMOTE_HOST: ${{ secrets.ECS_HOST }}
-          REMOTE_USER: ${{ secrets.ECS_USER }}
-          REMOTE_PORT: ${{ secrets.ECS_PORT }}
-          # 部署目标目录（其余 Nginx 项目不受影响）
-          TARGET: /var/www/ai-toolkit-map
-          # 需要同步的源目录
-          SOURCE: ./
-          # 排除不需要上传的文件/目录
-          EXCLUDE: ".github/,/.git/,/.gitignore,README.md,docs/"
-          # --delete: 部署前先清空目标目录，避免残留旧文件
-          # 注意：不要在这里写 -o/StrictHostKeyChecking（那是 ssh 参数，
-          #       ssh-deploy 已自动通过 --rsh 附带，写在 rsync 末尾会报错）
-          ARGS: "-avz --delete"
+          ssh-private-key: ${{ secrets.ECS_SSH_KEY }}
+
+      - name: 部署到阿里云 ECS
+        run: |
+          rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.ECS_PORT }}" \
+            --exclude='.github/' \
+            --exclude='.git/' \
+            --exclude='.gitignore' \
+            --exclude='README.md' \
+            --exclude='docs/' \
+            ./ \
+            ${{ secrets.ECS_USER }}@${{ secrets.ECS_HOST }}:/var/www/ai-toolkit-map/

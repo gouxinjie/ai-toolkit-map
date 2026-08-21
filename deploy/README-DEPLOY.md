@@ -32,6 +32,15 @@
 
 > **注意**：`ECS_SSH_KEY` 是私钥的**完整内容**，要原样粘贴（含首尾的 `BEGIN/END` 标记行）。
 
+### 私钥换行符问题（error in libcrypto）
+
+部署失败的常见原因是私钥在 Secrets 里被破坏了。若遇到 `error in libcrypto` 或 `Permission denied`，按顺序排查：
+
+1. **在编辑器里新建文件**（不要直接复制进 Secrets 输入框），把私钥内容粘贴进去，保存后用文本方式确认换行符是 `LF`（Linux 换行），不是 `CRLF`（Windows 换行）。
+2. **删除并重新创建** `ECS_SSH_KEY` Secret，重新完整粘贴一遍（含首尾标记行）。
+3. 确认该私钥**确实能免密登录** ECS（本机 `ssh -i <key> user@host` 无需密码）。
+4. 工作流已使用 `webfactory/ssh-agent` 加载私钥，它对多行私钥的换行符处理更健壮。
+
 ---
 
 ## 三、ECS 端一次性准备
