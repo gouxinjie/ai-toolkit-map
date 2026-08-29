@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 工具全景图 · 从编程助手到能力全景</title>
 <meta name="description" content="9 大板块、42 款 AI 工具全景地图：编程助手、办公智能体、智能体框架、图像/视频/语音生成、主流大模型、MCP/Skills 插件生态与线上服务平台，含选型决策表、能力排行与完整能力栈架构图。">
-<meta name="keywords" content="AI工具,AI编程助手,Claude Code,Cursor,GPT-5,大模型,智能体,MCP,Skills,图像生成,视频生成,语音合成">
+<meta name="keywords" content="AI工具,AI编程助手,Claude Code,Cursor,GPT-5.6,大模型,智能体,MCP,Skills,图像生成,视频生成,语音合成">
 <meta name="author" content="AI 工具全景图">
 <meta name="theme-color" content="#10b981">
 <meta property="og:type" content="website">
@@ -720,7 +720,7 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
   <div class="foot-grid">
     <div><h6>板块索引</h6><div id="foot-index-a"></div></div>
     <div><h6>板块索引 <small>· CONT</small></h6><div id="foot-index-b"></div></div>
-    <div><h6>关于</h6><a href="#top" data-totop>更新于 2026-08-21</a><a href="#top" data-totop>价格与参数以官方为准</a><a href="#top" data-totop>按 / 聚焦搜索</a></div>
+    <div><h6>关于</h6><a href="#top" data-totop>更新于 <span id="updDate">2026-08-29</span></a><a href="#top" data-totop>价格与参数以官方为准</a><a href="#top" data-totop>按 / 聚焦搜索</a></div>
   </div>
   <p class="foot-note">AI 工具全景图 · AI TOOLKIT MAP 2026 —— Built with ♥ and a lot of tokens.</p>
 </footer>
@@ -740,6 +740,11 @@ async function loadData(){
     // 兼容两种结构：顶层数组，或 { "sections": [...] } 包裹
     DATA = Array.isArray(json) ? json : (json && Array.isArray(json.sections) ? json.sections : []);
     if (!DATA.length) throw new Error('数据为空或结构不正确');
+    /* 从 JSON 读取 meta（若存在），供站点统计与页脚展示；缺省回退下方硬编码默认值 */
+    if (json && json.meta){
+      META.version = json.meta.version || META.version;
+      META.updated = json.meta.updated || META.updated;
+    }
     /* 统一清洗：title 字段开头的 ▚ 装饰符由渲染层统一补齐，避免重复图标 */
     (function stripTitle(data){
       data.forEach(s=>{
@@ -867,6 +872,7 @@ function render(){
     </button>
   `;
   $('#kicker').innerHTML = `<span class="dot"></span>AI TOOLKIT MAP · UPDATED ${META.updated}`;
+  const updEl = $('#updDate'); if (updEl) updEl.textContent = META.updated;
   $('#lede').innerHTML = `${DATA.length} 大板块、${META.tools} 款工具，每一款都按「介绍 → 配置 / 使用指导 → 实战案例」三段式拆解，外加选型决策表、六维能力排行、MCP / Skills 双 TOP 10 清单与一张完整的能力栈架构图。按 <code>/</code> 可随时检索任意工具。`;
   $('#stats').innerHTML = [
     [DATA.length, '', '核心板块', 'TRACKS'],
@@ -921,8 +927,8 @@ function render(){
 /* 根据 DATA 计算站点统计信息（在数据加载完成后调用） */
 function calcMeta(){
   META = {
-    version: '2.8',
-    updated: '2026-08-21',
+    version: META.version || '3.0',
+    updated: META.updated || '2026-08-29',
     tools: DATA.reduce((a,s)=>a+s.tools.length,0),
     cmds:  DATA.reduce((a,s)=>a+s.tools.reduce((x,t)=>x+t.config.filter(b=>b.type==='code').length,0),0),
     cases: DATA.reduce((a,s)=>a+s.tools.length,0)
