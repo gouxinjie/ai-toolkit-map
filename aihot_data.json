@@ -1,6 +1,6 @@
 {
  "meta": {
-  "version": "3.1",
+  "version": "3.2",
   "updated": "2026-08-29"
  },
  "sections": [
@@ -1476,7 +1476,7 @@
    "num": "07",
    "emoji": "🧠",
    "title": "主流大模型",
-   "desc": "7 个旗舰模型的能力速览与六维排行榜",
+   "desc": "11 款主流大模型的能力速览与六维排行榜",
    "acc": "--acc:#dc2626",
    "tools": [
     {
@@ -1653,6 +1653,109 @@
       }
      ],
      "case": "10M 长文档分析：把十年年报（约 900 万 token）全量喂给 Scout，直接问「研发投入与毛利率的拐点出现在哪一年」，单卡 30 秒出答案。"
+    },
+    {
+     "search": "grok xai spacex 大模型 推理 agent 长上下文",
+     "ico": "G4",
+     "name": "Grok 4.6",
+     "sub": "xAI · 长时程 Agent 与编程前沿旗舰",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "API"
+      },
+      {
+       "kind": "k-paid",
+       "text": "$2/6 每百万 token"
+      }
+     ],
+     "intro": "马斯克旗下 xAI 于 2026 年 8 月 12 日发布的旗舰：500K 上下文、文本 + 图像输入，综合跑分与 GPT-5.6 Sol 打平，API 输出价却只有其五分之一，聚焦长时程智能体与编程任务，已接入 Cursor、OpenRouter、Vercel 等生态。",
+     "config": [
+      {
+       "type": "code",
+       "lang": "bash · 兼容 OpenAI 端点",
+       "code": "curl https://api.x.ai/v1/chat/completions \\\n  -H \"Authorization: Bearer $XAI_API_KEY\" \\\n  -d '{\"model\": \"grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"写一个爬虫\"}]}'\n# 或直接在 Cursor / OpenRouter / Vercel 中切换 Grok 4.6"
+      }
+     ],
+     "case": "长时程 Agent：把「每周自动巡检 50 个竞品仓库并生成周报」交给 Grok 4.6，500K 上下文内连续多步规划与工具调用不丢状态，输出价约为同档旗舰的 1/5。"
+    },
+    {
+     "search": "glm 智谱 开源 编程 agent 网络安全 多模态",
+     "ico": "GL",
+     "name": "GLM-5.3",
+     "sub": "智谱 · 开源编程与 Agent SOTA",
+     "chips": [
+      {
+       "kind": "k-oss",
+       "text": "开源权重"
+      },
+      {
+       "kind": "k-kind",
+       "text": "API/本地"
+      }
+     ],
+     "intro": "智谱 2026 年 8 月发布的旗舰：AA 智能指数 60 分进入全球前沿模型区间，与 Claude Fable 5、GPT-5.6 Sol 同级，并与 Kimi K3 并列开源模型第一；擅长复杂编码、防御性网络安全与长程 Agent 任务，配套 GLM-5.3-Flash（320B-A18B）原生多模态版本同期开源。",
+     "config": [
+      {
+       "type": "code",
+       "lang": "bash · bigmodel.cn",
+       "code": "curl https://open.bigmodel.cn/api/paas/v4/chat/completions \\\n  -H \"Authorization: Bearer $ZHIPU_API_KEY\" \\\n  -d '{\"model\": \"glm-5.3\", \"messages\": [{\"role\": \"user\", \"content\": \"审查这段代码的安全隐患\"}]}'\n# 或本地部署：权重已开源，支持 vLLM / Ollama"
+      }
+     ],
+     "case": "安全审计：用 GLM-5.3 对 5 万行代码做防御性安全扫描，识别 SQL 注入与越权点 12 处，全程本地离线完成——开源权重 + 逼近闭源旗舰的体感。"
+    },
+    {
+     "search": "minimax m2.7 开源 agent 多智能体 性价比",
+     "ico": "MM",
+     "name": "MiniMax M2.7",
+     "sub": "MiniMax · 开源 Agent 模型 + 极致性价比",
+     "chips": [
+      {
+       "kind": "k-oss",
+       "text": "开源"
+      },
+      {
+       "kind": "k-paid",
+       "text": "≈$0.5 起/百万 token"
+      }
+     ],
+     "intro": "MiniMax 于 2026 年 3 月发布的 M2.7：MoE 架构、百万 token 上下文，通过 multi-agent 协作面向真实世界生产力，在 OpenRouter 长期位居调用量榜首；性能接近 Claude Opus 4.6 而价格极低，公司 ARR 已超 8 亿美元。",
+     "config": [
+      {
+       "type": "code",
+       "lang": "python · openai 兼容",
+       "code": "from openai import OpenAI\nclient = OpenAI(base_url=\"https://api.minimax.chat/v1\", api_key=\"sk-xxx\")\nresp = client.chat.completions.create(\n    model=\"MiniMax-M2.7\",\n    messages=[{\"role\": \"user\", \"content\": \"帮我拆解这个复杂项目为任务清单\"}])"
+      }
+     ],
+     "case": "多智能体协作：用 M2.7 的 multi-agent 模式并行拆解跨部门需求，规划 → 执行 → 复核三段式自动化，百万 token 上下文一次装下全量项目文档，成本约为闭源方案的 1/6。"
+    },
+    {
+     "search": "豆包 doubao 字节 火山引擎 大模型 中文 免费",
+     "ico": "DB",
+     "name": "豆包 2.1",
+     "sub": "字节跳动 · 国内用户量最大的模型矩阵",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "API"
+      },
+      {
+       "kind": "k-free",
+       "text": "免费额度"
+      }
+     ],
+     "intro": "火山引擎 2026 年 6 月 23 日发布的豆包大模型 2.1 系列，旗舰版 Doubao-Seed-2.1-Pro 多项基准比肩 GPT-5.5；已接入特斯拉车机，8 月字节将 Trae 与 Coze 团队并入豆包体系，是中文互联网渗透率最高的模型矩阵。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "火山引擎控制台开通「豆包大模型」服务，创建 API Key；",
+        "旗舰为 Doubao-Seed-2.1-Pro，另有轻量版与视频 / 图像 / 语音配套模型；",
+        "通过 OpenAI 兼容端点接入，或直接在豆包 App / 即梦 / 剪映等生态内使用。"
+       ]
+      }
+     ],
+     "case": "车载交互落地：豆包 2.1 接入特斯拉车机，支持自然语言多轮指令与本地化上下文理解，从出行导航到座舱娱乐一个入口完成。"
     }
    ],
    "table": {
@@ -1712,9 +1815,37 @@
       "开源自部署",
       "✓",
       "超长文本、自由微调"
+     ],
+     [
+      "Grok 4.6",
+      "500K",
+      "2 / 6",
+      "✗",
+      "长时程 Agent、英文推理"
+     ],
+     [
+      "GLM-5.3",
+      "200K+",
+      "低价 API / 开源自部署",
+      "✓（权重）",
+      "编程、Agent、网络安全"
+     ],
+     [
+      "MiniMax M2.7",
+      "1M",
+      "≈0.5 起",
+      "✓",
+      "multi-agent、性价比"
+     ],
+     [
+      "豆包 2.1",
+      "128K+",
+      "免费额度 / 低价",
+      "✗",
+      "中文生态、C 端渗透"
      ]
     ],
-    "cap": "▚ 表 7-1 · 七款主流大模型参数速览（价格为 2026-08 参考值）"
+    "cap": "▚ 表 7-1 · 十一款主流大模型参数速览（价格为 2026-08 参考值）"
    },
    "verdict": null,
    "decide": null,
@@ -2232,9 +2363,13 @@
        "GPT-5.6",
        "Claude 4.8",
        "Gemini 3.7",
+       "Grok 4.6",
        "Qwen 3.8",
        "DeepSeek V4",
        "Kimi K3",
+       "GLM-5.3",
+       "MiniMax M2.7",
+       "豆包 2.1",
        "Llama 4"
       ]
      },
