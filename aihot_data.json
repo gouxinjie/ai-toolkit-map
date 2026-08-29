@@ -1,6 +1,6 @@
 {
  "meta": {
-  "version": "3.0",
+  "version": "3.1",
   "updated": "2026-08-29"
  },
  "sections": [
@@ -9,7 +9,7 @@
    "num": "01",
    "emoji": "💻",
    "title": "AI 编程助手",
-   "desc": "从终端 CLI 到 AI IDE，8 款主流编程助手的核心命令与真实改造案例",
+   "desc": "从终端 CLI 到 AI IDE，10 款主流编程助手的核心命令与真实改造案例",
    "acc": "--acc:#0a5cff",
    "tools": [
     {
@@ -223,6 +223,62 @@
       }
      ],
      "case": "设计稿直通上线：设计师在 Figma 交付界面稿后，CodeBuddy 导入设计稿生成页面代码，联调 CloudBase 云函数与数据库，最后部署到 EdgeOne Pages——从设计到可访问的产品，一个工作日内完成，前端只做细节打磨。"
+    },
+    {
+     "search": "meta muse code 编码智能体 终端 低价 子智能体",
+     "ico": "MC",
+     "name": "Meta Muse Code",
+     "sub": "Meta · 低价终端编程智能体",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "CLI"
+      },
+      {
+       "kind": "k-paid",
+       "text": "≈$1.25/百万 token"
+      }
+     ],
+     "intro": "Meta 于 2026 年 8 月 5 日发布的首款 AI 编码智能体（Beta）：基于专为 Agent 协同训练的 Muse Spark 1.2 模型，主打大型代码库的持久子智能体协调与崩溃恢复能力，按量付费定价极具攻击性，是 2026 下半年编程工具市场的最大变量。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "官方仓库 / 终端下载 Muse Code Beta，登录 Meta 账号即用；",
+        "终端内以自然语言下达跨文件重构、测试修复等任务，自动协调子智能体；",
+        "Muse Spark 1.2 按量计费，约 $1.25/百万 token，适合大批量跑量任务。"
+       ]
+      }
+     ],
+     "case": "崩溃恢复：在 20 万行仓库让 Muse Code 协调多个子智能体并行重构模块，中途主进程意外退出后自动断点续跑，任务完成且无文件损坏——同类场景下成本仅为旗舰工具的零头。"
+    },
+    {
+     "search": "google antigravity 智能体 编程 平台 多智能体 定时任务",
+     "ico": "AG",
+     "name": "Google Antigravity",
+     "sub": "Google · 智能体协作平台（I/O 2026）",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "IDE/CLI/平台"
+      },
+      {
+       "kind": "k-paid",
+       "text": "订阅/按量"
+      }
+     ],
+     "intro": "Google I/O 2026 发布的智能体编程平台（Antigravity 2.0）：从 IDE 升级为多智能体协作平台，包含独立桌面应用、全新 CLI（取代 Gemini CLI）、SDK 与 Managed Agents API，支持定时任务与多智能体协同，复杂任务完成效率提升约 40%。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "桌面端下载 Antigravity 应用，或使用全新 CLI 创建 / 接管智能体；",
+        "通过 SDK 定义可复用的 Managed Agents，发布到团队共享；",
+        "在平台编排多智能体流水线，支持定时任务与人工接管节点。"
+       ]
+      }
+     ],
+     "case": "多智能体排障：把 CI 失败流水线交给 Antigravity，多个子智能体分别分析构建日志、定位回归 commit、验证修复方案，40 分钟自动产出可合并的修复 PR。"
     }
    ],
    "table": {
@@ -289,9 +345,23 @@
       "混元 / DeepSeek",
       "免费",
       "腾讯生态、产设研一体"
-     ]
      ],
-     "cap": "▚ 表 1-1 · 八款编程助手横向速览（价格为 2026-08 参考值）"
+     [
+      "Meta Muse Code",
+      "CLI",
+      "Muse Spark 1.2",
+      "≈$1.25/百万 token",
+      "低价、持久子智能体"
+     ],
+     [
+      "Google Antigravity",
+      "IDE/CLI/平台",
+      "Gemini 3.7",
+      "订阅/按量",
+      "多智能体编排、定时任务"
+     ]
+    ],
+    "cap": "▚ 表 1-1 · 十款编程助手横向速览（价格为 2026-08 参考值）"
    },
    "verdict": null,
    "decide": null,
@@ -521,7 +591,7 @@
    "num": "04",
    "emoji": "🎨",
    "title": "图像生成",
-   "desc": "6 大图像引擎的能力边界，与一份「按需求选模型」决策单",
+   "desc": "8 大图像引擎的能力边界，与一份「按需求选模型」决策单",
    "acc": "--acc:#d6336c",
    "tools": [
     {
@@ -679,6 +749,62 @@
       }
      ],
      "case": "电商模特换装：ControlNet（OpenPose）锁定模特姿势 + 线稿锁定服装版型，批量替换 30 套服装与背景，拍摄成本从数万元压到一台 4090 的电费。"
+    },
+    {
+     "search": "seedream 字节 即梦 剪映 火山方舟 图像 中文",
+     "ico": "Se",
+     "name": "Seedream 5.0",
+     "sub": "字节跳动 · 中文场景最强图像模型",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "即梦/API"
+      },
+      {
+       "kind": "k-free",
+       "text": "免费额度"
+      }
+     ],
+     "intro": "字节跳动 2026 年 2 月推出的自研图像模型，已上线剪映、CapCut、即梦与火山方舟，5.0 Pro 于 7 月登陆火山方舟体验中心。对中文排版与真实世界媒介形态（截图、论文、商品图）的理解能力领先，是电商与内容创作的性价比之选。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "即梦 AI / 剪映内直接使用，或火山方舟控制台开通 Seedream 5.0 Pro API；",
+        "提示词支持中文描述与参考图，输出可指定电商白底 / 场景图；",
+        "生成结果一键导入剪映二次编辑。"
+       ]
+      }
+     ],
+     "case": "电商主图批量生成：用 Seedream 5.0 Pro 为 200 个 SKU 生成白底商品图与场景图，中文标签与包装文字零错误，素材成本降低约 80%。"
+    },
+    {
+     "search": "nano banana gemini image google 图像 4k 编辑",
+     "ico": "NB",
+     "name": "Nano Banana 2",
+     "sub": "Google · Gemini 内置 4K 生图与编辑",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "Gemini/API"
+      },
+      {
+       "kind": "k-paid",
+       "text": "订阅含"
+      }
+     ],
+     "intro": "Google 于 2026 年 2 月发布的图像模型（基于 Gemini 3.1 Flash Image），已取代前代并集成进 Gemini 应用：4K 分辨率、精准文字渲染，同时大幅压低生成成本；另有 Nano Banana 2 Lite 面向高并发低成本场景。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "Gemini 应用中直接对话生成 / 编辑图片；",
+        "API 用 gemini-3.1-flash-image 模型调用，支持文本 + 参考图多轮编辑；",
+        "轻量场景选 Nano Banana 2 Lite，兼顾吞吐与成本。"
+       ]
+      }
+     ],
+     "case": "社媒素材流水线：用 Nano Banana 2 为每周活动生成 4K 主视觉与 9:16 竖版物料，文字渲染准确，配合 API 批量出图，运营成本显著下降。"
     }
    ],
    "table": {
@@ -738,9 +864,25 @@
       "★★★★★",
       "✓（完全）",
       "免费"
+     ],
+     [
+      "Seedream 5.0",
+      "★★★★",
+      "★★★★☆",
+      "★★★★",
+      "✗",
+      "免费额度"
+     ],
+     [
+      "Nano Banana 2",
+      "★★★★☆",
+      "★★★★☆",
+      "★★★★",
+      "✗",
+      "订阅含"
      ]
     ],
-    "cap": "▚ 表 4-1 · 六大图像引擎能力矩阵"
+    "cap": "▚ 表 4-1 · 八大图像引擎能力矩阵"
    },
    "verdict": null,
    "decide": {
