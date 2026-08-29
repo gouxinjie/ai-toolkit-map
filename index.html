@@ -376,7 +376,8 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
 /* arch */
 .arch{margin:0;position:relative;border:1px solid var(--line);border-top:none;border-radius:0 0 13px 13px;background:var(--surface);padding:16px 20px;box-shadow:0 6px 18px -12px rgba(15,23,42,.08)}
 .arch-h{font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:10px 16px;background:color-mix(in srgb,var(--acc) 9%,#fff);color:var(--acc);font-weight:700;border:1px solid var(--line);border-radius:13px 13px 0 0;box-shadow:0 6px 18px -12px rgba(15,23,42,.08)}
-.arch::before{content:"";position:absolute;left:118px;top:14px;bottom:14px;width:2px;background:repeating-linear-gradient(180deg,var(--line) 0 7px,transparent 7px 13px)}
+.arch::before{content:"";position:absolute;left:78px;top:14px;bottom:14px;width:3px;background:repeating-linear-gradient(180deg,color-mix(in srgb,var(--ink) 35%,transparent) 0 7px,transparent 7px 13px);z-index:0}
+/* 层间连接线：一条贯穿标签列的垂直虚线，层内容（节点）叠在虚线上方 */
 .arch-layer{display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:center;padding:10px 0;position:relative}
 .arch-tag{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:1px;color:#fff;border-radius:8px;padding:8px 6px;text-align:center;line-height:1.5;z-index:1}
 .arch-tag small{display:block;font-size:8.5px;opacity:.8;font-weight:400}
@@ -384,6 +385,7 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
 .arch-nodes i{font-style:normal;font-size:11.5px;font-weight:500;padding:6px 11px;background:var(--surface);border:1px solid var(--line);border-radius:7px;color:var(--ink);transition:.2s}
 .arch-nodes i:hover{transform:translateY(-2px);border-color:var(--acc);color:var(--acc);box-shadow:0 6px 14px -8px color-mix(in srgb,var(--acc) 40%,transparent)}
 .l4 .arch-tag{background:var(--pink)}.l3 .arch-tag{background:var(--purple)}.l2 .arch-tag{background:var(--blue)}.l1 .arch-tag{background:var(--green)}.l0 .arch-tag{background:#475569}
+.arch-conn{height:20px;margin:0}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
@@ -426,9 +428,10 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
   .flow{grid-template-columns:1fr}
   .flow-arr{min-width:0;padding:2px 0}
   .flow-arr i{background:repeating-linear-gradient(180deg,var(--acc) 0 6px,transparent 6px 11px)}
-  .arch::before{display:none}
   .arch-layer{grid-template-columns:1fr;gap:8px}
-  .arch-tag{max-width:140px}
+  .arch-tag{width:118px}
+  .arch::before{left:79px;top:14px;bottom:14px}
+  .arch-conn{height:14px}
   /* 板块头: 编号 + 标题在上, 操作在下一行 */
   .sec-head{
     display:grid;
@@ -600,9 +603,10 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
   .flow-chips{margin:8px 0 0;padding-top:10px}
 
   /* === 架构图 === */
-  .arch::before{display:none}
   .arch-layer{grid-template-columns:1fr;gap:6px;padding:8px 0}
-  .arch-tag{font-size:10px;letter-spacing:.8px;padding:6px 10px;max-width:160px;border-radius:6px}
+  .arch-conn{height:12px}
+  .arch-tag{font-size:10px;letter-spacing:.8px;padding:6px 10px;width:118px;border-radius:6px}
+  .arch::before{left:71px}
   .arch-tag small{font-size:8px;margin-top:1px}
   .arch-nodes{gap:5px}
   .arch-nodes i{font-size:11px;padding:5px 10px;border-radius:6px}
@@ -855,7 +859,8 @@ function top10HTML(t){
 }
 function archHTML(a){
   if (!a) return '';
-  const layers = a.layers.map(l=>`<div class="arch-layer ${esc(l.cls)}"><div class="arch-tag">${esc(l.tag)}<small>${esc(l.en)}</small></div><div class="arch-nodes">${l.nodes.map(n=>`<i>${esc(n)}</i>`).join('')}</div></div>`).join('');
+  const items = a.layers.map(l=>`<div class="arch-layer ${esc(l.cls)}"><div class="arch-tag">${esc(l.tag)}<small>${esc(l.en)}</small></div><div class="arch-nodes">${l.nodes.map(n=>`<i>${esc(n)}</i>`).join('')}</div></div>`);
+  const layers = items.join('<div class="arch-conn" aria-hidden="true"></div>');
   return `<div class="reveal"><div class="arch-h">▚ 完整能力栈架构图 · THE FULL STACK</div><div class="arch">${layers}</div></div>`;
 }
 
