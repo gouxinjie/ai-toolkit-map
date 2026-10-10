@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "3.2",
-  "updated": "2026-08-29"
+  "version": "3.3",
+  "updated": "2026-10-10"
  },
  "sections": [
   {
@@ -9,7 +9,7 @@
    "num": "01",
    "emoji": "💻",
    "title": "AI 编程助手",
-   "desc": "从终端 CLI 到 AI IDE，10 款主流编程助手的核心命令与真实改造案例",
+   "desc": "从终端 CLI 到 AI IDE，14 款主流编程助手的核心命令与真实改造案例",
    "acc": "--acc:#0a5cff",
    "tools": [
     {
@@ -52,13 +52,13 @@
        "text": "$20/月"
       }
      ],
-     "intro": "市占率最高的 AI IDE：Tab 智能补全负责「写下一行」，Composer / Agent 模式负责「改整个项目」。可自由切换 Claude、GPT-5.6 等多家模型，插件与 VS Code 完全兼容。2026 年被 SpaceX 以 600 亿美元收购后迭代至 Cursor 3，Composer 2.5 支持多文件云端智能体协作。",
+     "intro": "市占率最高的 AI IDE：Tab 智能补全负责「写下一行」，Composer / Agent 模式负责「改整个项目」。可自由切换 Claude、GPT-6.1 等多家模型，插件与 VS Code 完全兼容。2026 年估值约 290 亿美元并迭代至 Cursor 3，Composer 2.5 支持多文件云端智能体协作。",
      "config": [
       {
        "type": "list",
        "items": [
         "官网 cursor.com 下载，一键导入 VS Code 配置与插件；",
-        "Settings → Models：开启 Claude Sonnet 4.6 / GPT-5.6，Tab 补全建议保留自研小模型；",
+        "Settings → Models：开启 Claude Sonnet 5.5 / GPT-6.1，Tab 补全建议保留自研小模型；",
         "项目根目录建 .cursor/rules/*.mdc 写入代码规范，Agent 每次编辑都会遵守。"
        ]
       }
@@ -279,6 +279,118 @@
       }
      ],
      "case": "多智能体排障：把 CI 失败流水线交给 Antigravity，多个子智能体分别分析构建日志、定位回归 commit、验证修复方案，40 分钟自动产出可合并的修复 PR。"
+    },
+    {
+     "search": "github copilot 微软 vs code cli 编程 补全 agent 自主",
+     "ico": "GC",
+     "name": "GitHub Copilot",
+     "sub": "微软 / GitHub · IDE 插件 + CLI + 网页",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "IDE插件/CLI"
+      },
+      {
+       "kind": "k-paid",
+       "text": "$10/月起"
+      }
+     ],
+     "intro": "背靠微软生态的老牌 AI 编程助手，已从补全进化为自主编程：覆盖 VS Code、Visual Studio、JetBrains 与 GitHub.com，2026 年 2 月推出 Copilot CLI 让终端也能自然语言交互，深度绑定 GitHub 仓库与 Actions，是企业采购最稳的选择。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "VS Code / Visual Studio 扩展市场搜索 GitHub Copilot 一键安装，登录 GitHub 账号即用；",
+        "终端安装 Copilot CLI：npm i -g @github/copilot 后 copilot 进入交互；",
+        "Agent 模式可跨文件自动改码，Copilot Pro+ / Business / Enterprise 分层定价。"
+       ]
+      }
+     ],
+     "case": "企业统一采购：团队全员用 Copilot 做补全与 PR 摘要，CI 集成 Copilot code review 自动给出建议，新人靠「@workspace」问清项目结构，入职上手周期明显缩短。"
+    },
+    {
+     "search": "kimi code 月之暗面 终端 桌面 多模态 编程 ide 插件",
+     "ico": "KC",
+     "name": "Kimi Code",
+     "sub": "月之暗面 · 终端 + 桌面多模态编程 Agent",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "CLI/IDE/桌面"
+      },
+      {
+       "kind": "k-oss",
+       "text": "开源"
+      }
+     ],
+     "intro": "月之暗面随 Kimi K2.5 / K3 推出的编程工具，提供 CLI、IDE 插件、桌面客户端与 Web 端多形态，支持直接输入图片 / 视频辅助编程。2026 年 9 月推出的 Kimi Code Desktop 成为「终端 Agent 桌面化」的标志性事件。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "官网下载 CLI 或桌面客户端，可无缝集成 VS Code / JetBrains / Zed；",
+        "基于 Kimi K2.5 / K3 模型，支持截图 + 视频输入让 Agent 看懂界面；",
+        "桌面端提供独立工作台，一键接入 MCP 与自定义工作流。"
+       ]
+      }
+     ],
+     "case": "截图排障：把报错截图和录屏拖给 Kimi Code，它自动识别界面元素、定位到对应组件并给出修复，中文场景理解尤其省心。"
+    },
+    {
+     "search": "cline 开源 编程 智能体 vs code mcp 模型自由 plan act",
+     "ico": "Cl",
+     "name": "Cline",
+     "sub": "开源 · VS Code 里的自主编程智能体",
+     "chips": [
+      {
+       "kind": "k-oss",
+       "text": "开源免费"
+      },
+      {
+       "kind": "k-kind",
+       "text": "VS Code 插件"
+      }
+     ],
+     "intro": "最受欢迎的开源 AI 编程智能体之一：以 VS Code 插件形态运行，Plan / Act 双模式 + MCP 扩展，模型完全自由（Claude、GPT、DeepSeek、本地 Ollama 均可），带给你对每一步操作的完整可见性与掌控感。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "VS Code 扩展市场搜索 Cline 安装，输入任意 API Key 即可用；",
+        "Plan 模式先出方案再执行，Act 模式直接改码；",
+        "MCP 页一键接入浏览器、数据库等工具，支持自定义模型与本地 Ollama。"
+       ]
+      }
+     ],
+     "case": "开源替代：预算有限的个人开发者用 Cline + 本地 DeepSeek，获得接近旗舰 IDE 的自主改码体验，且每步操作透明可审查。"
+    },
+    {
+     "search": "devin cognition 自主 工程师 ai 云端 并行 pr 独立工作",
+     "ico": "Dv",
+     "name": "Devin",
+     "sub": "Cognition · 自主 AI 软件工程师",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "云端/平台"
+      },
+      {
+       "kind": "k-paid",
+       "text": "$20/月起"
+      }
+     ],
+     "intro": "Cognition 的自主 AI 工程师：在云端独立环境里领任务、写代码、跑测试、提交 PR，可并行处理多个工单，像一名不用睡觉的远程工程师，适合「把 backlog 丢给它」的异步交付流。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "devin.ai 注册，连接 GitHub / Jira / Slack；",
+        "以工单形式下达需求，Devin 在隔离容器里独立推进并回报进度；",
+        "交付前自动跑测试与自检，结果以 PR 形式提交人工 review。"
+       ]
+      }
+     ],
+     "case": "backlog 清空：把 20 个中小型 issue 批量派给 Devin，它并行开工、逐个提 PR，工程师只做合并与 review，一周消化了原本要三周的任务量。"
     }
    ],
    "table": {
@@ -293,7 +405,7 @@
      [
       "Claude Code",
       "CLI",
-      "Claude 4.8 系列",
+      "Claude 5.5 系列",
       "Pro $20/月起",
       "大仓库重构、深度工程任务"
      ],
@@ -307,7 +419,7 @@
      [
       "Codex CLI",
       "CLI + 云沙箱",
-      "GPT-5.6 Sol",
+      "GPT-6.1 Sol",
       "ChatGPT 订阅含",
       "异步派活、PR 交付流"
      ],
@@ -356,12 +468,40 @@
      [
       "Google Antigravity",
       "IDE/CLI/平台",
-      "Gemini 3.7",
+      "Gemini 4 Argon",
       "订阅/按量",
       "多智能体编排、定时任务"
+     ],
+     [
+      "GitHub Copilot",
+      "IDE插件/CLI",
+      "GPT-6.1",
+      "Copilot 订阅",
+      "微软生态、企业统一采购"
+     ],
+     [
+      "Kimi Code",
+      "CLI/IDE/桌面",
+      "Kimi K2.5 / K3",
+      "开源",
+      "中文多模态、截图排障"
+     ],
+     [
+      "Cline",
+      "VS Code 插件",
+      "任意（含本地）",
+      "开源",
+      "开源替代、操作透明"
+     ],
+     [
+      "Devin",
+      "云端平台",
+      "多模型",
+      "$20/月起",
+      "异步派活、backlog 清空"
      ]
     ],
-    "cap": "▚ 表 1-1 · 十款编程助手横向速览（价格为 2026-08 参考值）"
+    "cap": "▚ 表 1-1 · 十四款编程助手横向速览（价格为 2026-10 参考值）"
    },
    "verdict": null,
    "decide": null,
@@ -479,7 +619,7 @@
    "num": "03",
    "emoji": "🤖",
    "title": "智能体框架",
-   "desc": "OpenClaw vs Hermes —— 个人运行时与企业编排框架，一次讲透",
+   "desc": "OpenClaw / Hermes / Dots —— 从个人运行时到全天候 Agent，一次讲透",
    "acc": "--acc:#ea580c",
    "tools": [
     {
@@ -531,6 +671,34 @@
       }
      ],
      "case": "内容工厂流水线：researcher 抓取选题素材 → writer 产出初稿 → reviewer 按品牌规范打分，低于阈值自动打回重写，终审节点人工一键放行。上线后内容产能 ×3，且每步留痕可追溯。"
+    },
+    {
+     "search": "dots openai 个人 agent always-on 全天候 自主 独立电脑 长期在线",
+     "ico": "Do",
+     "name": "Dots",
+     "sub": "OpenAI · 全天候个人 Agent（DevDay 2026）",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "个人 Agent"
+      },
+      {
+       "kind": "k-paid",
+       "text": "订阅含"
+      }
+     ],
+     "intro": "OpenAI 2026 年 9 月 30 日 DevDay 发布的重磅新品：一个长期在线、拥有独立电脑、能够自己推进工作的个人 Agent。由 GPT-6 Astra 驱动，把「交代任务—持续跟进—交付结果」从实时交互变成了后台异步。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "在 ChatGPT 中创建 Dots，授予其独立工作环境与账号权限；",
+        "用自然语言交代长期任务，Dots 会在后台持续推进并主动汇报进展；",
+        "适合跑数据、盯竞品、整理资料等「长线活」，人只需定期验收。"
+       ]
+      }
+     ],
+     "case": "全天候助理：把「每天整理行业动态成早报」交给 Dots，它凌晨自动抓取、归纳、排版并推送，用户起床直接看成品，全程无需人工干预。"
     }
    ],
    "table": {
@@ -1167,7 +1335,7 @@
    "num": "06",
    "emoji": "🔊",
    "title": "语音处理",
-   "desc": "8 款 TTS / 语音引擎横评：延迟、克隆、情感与开源方案",
+   "desc": "9 款 TTS / 语音引擎横评：延迟、克隆、情感与开源方案",
    "acc": "--acc:#0891b2",
    "tools": [
     {
@@ -1369,6 +1537,34 @@
       }
      ],
      "case": "双人对谈播客：ChatTTS 生成两个带语气词的音色对谈，听众完播率与真人录制版本几乎无差，而单期制作时间从 6 小时降到 40 分钟。"
+    },
+    {
+     "search": "qwen-audio tts 阿里 云栖 音频生成 audiogen 多语种 播客 对话",
+     "ico": "QA",
+     "name": "Qwen-Audio-3.1-TTS-Next",
+     "sub": "阿里 · 全音频生成（Audiogen）",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "API/开源"
+      },
+      {
+       "kind": "k-free",
+       "text": "免费额度"
+      }
+     ],
+     "intro": "阿里 2026 年 9 月 22 日云栖大会亮相的音频创作模型：一次生成融合人声、音效、环境音与背景音乐的完整音频，支持多语种 TTS、多人对话、播客等任务，一段话即可产出带角色对白的完整声音内容。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "阿里云百炼 / 通义平台开通 Qwen-Audio-3.1-TTS-Next；",
+        "输入一段场景描述或剧本，直接生成含对白、音效与配乐的完整音频；",
+        "支持多语种、多人对话与播客，可配合音色克隆与情感参数微调。"
+       ]
+      }
+     ],
+     "case": "播客一条龙：给一句「两个主播聊 AI 行业动态」的设定，模型自动生成带角色对白、转场音效与背景乐的 20 分钟播客，省去了分轨录制与后期混音。"
     }
    ],
    "table": {
@@ -1453,9 +1649,18 @@
       "★★★★（语气词）",
       "✓",
       "播客 / 闲聊机器人"
+     ],
+     [
+      "Qwen-Audio-3.1-TTS-Next",
+      "~400ms",
+      "★★★★★",
+      "✓",
+      "★★★★",
+      "✓（权重）",
+      "全音频生成 / 播客"
      ]
     ],
-    "cap": "▚ 表 6-1 · 八款语音引擎横评（延迟为参考值）"
+    "cap": "▚ 表 6-1 · 九款语音引擎横评（延迟为参考值）"
    },
    "verdict": {
     "title": "▚ 组合推荐 · PLAYBOOK",
@@ -1480,10 +1685,10 @@
    "acc": "--acc:#dc2626",
    "tools": [
     {
-     "search": "gpt-5 gpt-5.6 sol terra luna openai 大模型 推理 agent 函数调用",
-     "ico": "G5",
-     "name": "GPT-5.6 系列",
-     "sub": "OpenAI · Sol / Terra / Luna 三代旗舰",
+     "search": "gpt-6 gpt-6.1 gpt-6 sol astra openai 大模型 推理 agent 函数调用 computer-use",
+     "ico": "G6",
+     "name": "GPT-6.1 / GPT-6 Astra",
+     "sub": "OpenAI · DevDay 2026 双旗舰",
      "chips": [
       {
        "kind": "k-kind",
@@ -1491,24 +1696,24 @@
       },
       {
        "kind": "k-paid",
-       "text": "≈$4 起/百万 input"
+       "text": "Pro $500/月起"
       }
      ],
-     "intro": "OpenAI 2026 年 8 月的旗舰家族：Sol 主攻深度推理与 Agent 工具链，Terra 兼顾速度，Luna 面向免费用户开放无限文本聊天。延续「统一入口 + 智能路由」，编码与函数调用能力顶级，幻觉率显著下降，是复杂工作流的稳妥底座。",
+     "intro": "2026 年 9 月 30 日 DevDay 发布的旗舰家族：GPT-6.1 Sol 强化 Agentic Coding、computer use 与专业工作能力，被称「性价比之王」；GPT-6 Astra 面向自主探索与规划，是全天候个人 Agent Dots 的驱动引擎。",
      "config": [
       {
        "type": "code",
        "lang": "python",
-       "code": "from openai import OpenAI\nclient = OpenAI()\nresp = client.responses.create(\nmodel=\"gpt-5.6-sol\",\nreasoning={\"effort\": \"high\"},   # low/medium/high 控制思考深度\ninput=\"设计一个限流中间件\")"
+       "code": "from openai import OpenAI\nclient = OpenAI()\nresp = client.responses.create(\nmodel=\"gpt-6.1-sol\",\nreasoning={\"effort\": \"high\"},   # low/medium/high 控制思考深度\ninput=\"设计一个限流中间件\")"
       }
      ],
-     "case": "Agent 工具链：把「查数据库 → 生成报表 → 发邮件」串成 Function Calling 链，GPT-5.6 全程零参数传错，稳定运行两周无人工介入。"
+     "case": "Agent 工具链：把「查数据库 → 生成报表 → 发邮件」串成 Function Calling 链，GPT-6.1 Sol 全程零参数传错；配合同日发布的 Dots，还能把任务交给长期在线的个人 Agent 自己推进。"
     },
     {
-     "search": "claude 4.8 opus sonnet haiku fable anthropic 编程 长上下文",
-     "ico": "C4",
-     "name": "Claude 4.8 / Fable 5",
-     "sub": "Anthropic · 长任务编程天花板",
+     "search": "claude 5.5 opus sonnet haiku fable anthropic 编程 长上下文",
+     "ico": "C5",
+     "name": "Claude 5.5 系列",
+     "sub": "Anthropic · Opus 5.5 / Sonnet 5.5",
      "chips": [
       {
        "kind": "k-kind",
@@ -1519,21 +1724,21 @@
        "text": "$3/15 起"
       }
      ],
-     "intro": "2026 年 Claude 家族已扩展为 Opus 4.8（极限推理）、Sonnet 4.6（速度与长上下文）、Haiku 4.5（轻量）与面向长文创作的新旗舰 Fable 5。连续数小时的自主编程任务中保持目标不漂移，是 Claude Code 背后的引擎，工程师口碑之王。",
+     "intro": "2026 年 9 月 22 日发布的新一代：Opus 5.5 性能对标 Fable 5.1、成本直降 40%，重点强化编程、计算机操作与复杂任务中的行为约束；Sonnet 5.5 速度提升 30%，Terminal-Bench 成绩从 10.3% 飙升至 70.6%。是 Claude Code 背后的引擎，工程师口碑之王。",
      "config": [
       {
        "type": "code",
        "lang": "python",
-       "code": "pip install anthropic\n# model: claude-sonnet-4-6 / claude-opus-4-8 / claude-fable-5\nmsg = client.messages.create(\nmodel=\"claude-sonnet-4-6\",\nmax_tokens=8192,\nmessages=[{\"role\": \"user\", \"content\": \"重构这个 2 万行仓库的鉴权层\"}])"
+       "code": "pip install anthropic\n# model: claude-opus-5-5 / claude-sonnet-5-5 / claude-fable-5\nmsg = client.messages.create(\nmodel=\"claude-sonnet-5-5\",\nmax_tokens=8192,\nmessages=[{\"role\": \"user\", \"content\": \"重构这个 2 万行仓库的鉴权层\"}])"
       }
      ],
-     "case": "通宵重构：给 Claude Code + Sonnet 4.6 下达鉴权层重构任务，它自主规划 14 个步骤、边改边测，清晨交付全绿测试与完整变更说明。"
+     "case": "通宵重构：给 Claude Code + Sonnet 5.5 下达鉴权层重构任务，它自主规划 14 个步骤、边改边测，清晨交付全绿测试与完整变更说明——同等任务成本还比上代降了四成。"
     },
     {
-     "search": "gemini 3.7 flash google 多模态 长上下文 视频理解",
-     "ico": "Ge",
-     "name": "Gemini 3.7 Flash",
-     "sub": "Google · 快速迭代旗舰，编码 / Agent 首选",
+     "search": "gemini 4 argon google 多模态 长上下文 代码工程 网络安全",
+     "ico": "GA",
+     "name": "Gemini 4 Argon",
+     "sub": "Google · 迄今最先进旗舰",
      "chips": [
       {
        "kind": "k-kind",
@@ -1544,12 +1749,12 @@
        "text": "按量计费"
       }
      ],
-     "intro": "Google 2026 年 8 月 14 日发布的旗舰：官方定位为迄今「最智能的主力模型」，专为编码与 Agent 任务设计，Gemini 4 已定档年内。延续原生多模态与超长上下文理解，把整个代码仓库或长会议视频直接丢进去问依然无人能敌。",
+     "intro": "Google 2026 年 9 月 30 日发布的最先进模型：聚焦长流程软件工程、企业知识工作与网络安全防御，DeepSWE v1.1 达 77.9% 领先同代，Text Arena 登顶，成本仅 GPT-6 Astra 的约六成。原生多模态与超长上下文，把整个代码仓库或长会议视频直接丢进去问依然无人能敌。",
      "config": [
       {
        "type": "code",
        "lang": "python",
-       "code": "pip install google-genai\nfrom google import genai\nclient = genai.Client(api_key=\"xxxx\")\nresp = client.models.generate_content(\nmodel=\"gemini-3.7-flash\",\ncontents=[video_file, \"总结这场发布会的 5 个关键点\"])"
+       "code": "pip install google-genai\nfrom google import genai\nclient = genai.Client(api_key=\"xxxx\")\nresp = client.models.generate_content(\nmodel=\"gemini-4-argon\",\ncontents=[video_file, \"总结这场发布会的 5 个关键点\"])"
       }
      ],
      "case": "整仓代码审计：把大型代码库一次性塞入上下文，直接提问「哪些地方存在并发安全隐患」，定位出多处人工审计漏掉的问题。"
@@ -1669,7 +1874,7 @@
        "text": "$2/6 每百万 token"
       }
      ],
-     "intro": "马斯克旗下 xAI 于 2026 年 8 月 12 日发布的旗舰：500K 上下文、文本 + 图像输入，综合跑分与 GPT-5.6 Sol 打平，API 输出价却只有其五分之一，聚焦长时程智能体与编程任务，已接入 Cursor、OpenRouter、Vercel 等生态。",
+     "intro": "马斯克旗下 xAI 于 2026 年 8 月 12 日发布的旗舰：500K 上下文、文本 + 图像输入，综合跑分与 GPT-6.1 Sol 打平，API 输出价却只有其五分之一，聚焦长时程智能体与编程任务，已接入 Cursor、OpenRouter、Vercel 等生态。",
      "config": [
       {
        "type": "code",
@@ -1694,7 +1899,7 @@
        "text": "API/本地"
       }
      ],
-     "intro": "智谱 2026 年 8 月发布的旗舰：AA 智能指数 60 分进入全球前沿模型区间，与 Claude Fable 5、GPT-5.6 Sol 同级，并与 Kimi K3 并列开源模型第一；擅长复杂编码、防御性网络安全与长程 Agent 任务，配套 GLM-5.3-Flash（320B-A18B）原生多模态版本同期开源。",
+     "intro": "智谱 2026 年 8 月发布的旗舰：AA 智能指数 60 分进入全球前沿模型区间，与 Claude Opus 5.5、GPT-6.1 Sol 同级，并与 Kimi K3 并列开源模型第一；擅长复杂编码、防御性网络安全与长程 Agent 任务，配套 GLM-5.3-Flash（320B-A18B）原生多模态版本同期开源。",
      "config": [
       {
        "type": "code",
@@ -1768,21 +1973,21 @@
     ],
     "rows": [
      [
-      "GPT-5.6",
+      "GPT-6.1 / Astra",
       "1.1M",
       "4 起 / 按量",
       "✗",
       "Agent 工具链、通用推理"
      ],
      [
-      "Claude 4.8 / Fable 5",
+      "Claude 5.5 系列",
       "200K–1M",
       "3 / 15 起",
       "✗",
       "长任务编程、大型重构"
      ],
      [
-      "Gemini 3.7 Flash",
+      "Gemini 4 Argon",
       "1M–2M",
       "按量计费",
       "✗",
@@ -1845,7 +2050,7 @@
       "中文生态、C 端渗透"
      ]
     ],
-    "cap": "▚ 表 7-1 · 十一款主流大模型参数速览（价格为 2026-08 参考值）"
+    "cap": "▚ 表 7-1 · 十一款主流大模型参数速览（价格为 2026-10 参考值）"
    },
    "verdict": null,
    "decide": null,
@@ -1857,12 +2062,12 @@
       "rows": [
        {
         "rank": 0,
-        "name": "Claude 4.8",
+        "name": "Claude 5.5",
         "score": 97
        },
        {
         "rank": 0,
-        "name": "GPT-5.6",
+        "name": "GPT-6.1",
         "score": 93
        },
        {
@@ -1878,12 +2083,12 @@
       "rows": [
        {
         "rank": 0,
-        "name": "GPT-5.6",
+        "name": "GPT-6.1",
         "score": 96
        },
        {
         "rank": 0,
-        "name": "Gemini 3.7 Flash",
+        "name": "Gemini 4 Argon",
         "score": 92
        },
        {
@@ -1904,12 +2109,12 @@
        },
        {
         "rank": 0,
-        "name": "Gemini 3.7 Flash",
+        "name": "Gemini 4 Argon",
         "score": 95
        },
        {
         "rank": 0,
-        "name": "Claude 4.8",
+        "name": "Claude 5.5",
         "score": 90
        }
       ]
@@ -1920,12 +2125,12 @@
       "rows": [
        {
         "rank": 0,
-        "name": "Gemini 3.7 Flash",
+        "name": "Gemini 4 Argon",
         "score": 96
        },
        {
         "rank": 0,
-        "name": "GPT-5.6",
+        "name": "GPT-6.1",
         "score": 93
        },
        {
@@ -2151,7 +2356,7 @@
    "verdict": {
     "title": "▚ 一句话总结 · TL;DR",
     "paras": [
-     "✅ <b>模型层</b>按需混搭：旗舰干难活（Claude 4.8 / GPT-5.6），开源跑量（Qwen 3.8 / DeepSeek V4）；",
+     "✅ <b>模型层</b>按需混搭：旗舰干难活（Claude 5.5 / GPT-6.1），开源跑量（Qwen 3.8 / DeepSeek V4）；",
      "✅ <b>协议层</b>全面 MCP 化：先装 Playwright + Context7 + GitHub 三件套，工具只写一次处处接入；",
      "✅ <b>技能层</b>从 pdf / docx / xlsx 办公三件套起步，再用 skill-creator 沉淀自家业务流程；",
      "✅ <b>应用层</b>别重复造轮子：编程用 Claude Code / Cursor，办公用 Coze / Dify，个人助理交给 OpenClaw。"
@@ -2360,9 +2565,9 @@
       "tag": "L1 模型层",
       "en": "FOUNDATION MODELS",
       "nodes": [
-       "GPT-5.6",
-       "Claude 4.8",
-       "Gemini 3.7",
+       "GPT-6.1",
+       "Claude 5.5",
+       "Gemini 4",
        "Grok 4.6",
        "Qwen 3.8",
        "DeepSeek V4",
@@ -2461,6 +2666,36 @@
       "ModelScope 魔搭",
       "https://modelscope.cn/",
       "阿里开源模型中心，可在线体验"
+     ],
+     [
+      "OpenAI",
+      "https://platform.openai.com/",
+      "GPT 系列官方，ChatGPT / API"
+     ],
+     [
+      "Anthropic",
+      "https://console.anthropic.com/",
+      "Claude 系列官方"
+     ],
+     [
+      "Google AI Studio",
+      "https://aistudio.google.com/",
+      "Gemini 系列官方，含 Vertex AI"
+     ],
+     [
+      "月之暗面 Moonshot",
+      "https://platform.moonshot.cn/",
+      "Kimi 系列官方"
+     ],
+     [
+      "MiniMax 开放平台",
+      "https://platform.minimaxi.com/",
+      "MiniMax M2 系列官方"
+     ],
+     [
+      "xAI",
+      "https://console.x.ai/",
+      "Grok 系列官方"
      ]
     ],
     "cap": "▚ 表 9-1 · 线上大模型服务平台速览"
