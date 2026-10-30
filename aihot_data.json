@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "3.3",
-  "updated": "2026-10-10"
+  "version": "3.4",
+  "updated": "2026-10-30"
  },
  "sections": [
   {
@@ -91,29 +91,29 @@
      "case": "批量修复 CI：把红色流水线丢给它：codex --full-auto \"修复 tests/e2e 全部失败用例\"，自动定位 4 个 flaky test，补重试与断言，CI 一次转绿。"
     },
     {
-     "search": "kimi k3 moonshot 月之暗面 编程 api 模型 低成本",
-     "ico": "K2",
-     "name": "Kimi K3",
-     "sub": "月之暗面 · 2.8T 开放权重编程模型",
+     "search": "aider 开源 命令行 编程 git 终端 智能体 代码审查 回滚",
+     "ico": "Ai",
+     "name": "Aider",
+     "sub": "开源 · Git 原生的终端结对编程",
      "chips": [
       {
-       "kind": "k-kind",
-       "text": "API"
+       "kind": "k-oss",
+       "text": "开源免费"
       },
       {
-       "kind": "k-paid",
-       "text": "极低单价"
+       "kind": "k-kind",
+       "text": "CLI"
       }
      ],
-     "intro": "2026 年 7 月发布的代际旗舰：2.8 万亿总参数 MoE、100 万 token 上下文、开放权重。K2.5 于 8 月 31 日退役，K3 全面接棒，Agent 蜂群模式可并行处理多文件任务，API 兼容 OpenAI 格式，能直接塞进 Claude Code、OpenCode 等工具当后端。",
+     "intro": "最老牌的开源终端编程智能体之一：每一次修改都自动生成一个 Git commit，改动随时可以 /undo 回滚，出问题先翻 commit 不翻聊天记录。支持几乎所有主流与本地模型，仓库地图（Repo Map）技术让它不必把整个项目塞进上下文也能理清结构。",
      "config": [
       {
        "type": "code",
        "lang": "bash",
-       "code": "export MOONSHOT_API_KEY=sk-xxxx\n# 在任意支持自定义 baseURL 的编程工具中指向：\n#   baseURL: https://api.moonshot.cn/v1\n#   model:   kimi-k3"
+       "code": "pip install aider-install\naider --model sonnet          # 或 deepseek / ollama/qwen\ncd your-project && aider\n# 常用斜杠命令：\n#   /add  把文件加入会话上下文\n#   /undo 回滚上一次改动（对应一个 commit）\n#   /test 跑测试并自动修复失败用例"
       }
      ],
-     "case": "成本替换：把 OpenCode 的后端从闭源旗舰切到 Kimi K3，团队日常脚本编写、正则生成、SQL 调优照跑，月度 token 账单降到原来的 1/5，复杂任务再手动切回旗舰模型。"
+     "case": "安全重构：在没有单测的老仓库里用 Aider 逐函数重构，每一步都是独立 commit，改崩了直接 /undo 回到上一个可运行版本——一天推进 40 个文件，零次推倒重来。"
     },
     {
      "search": "trae 字节 免费 ide 豆包 builder mcp",
@@ -424,11 +424,11 @@
       "异步派活、PR 交付流"
      ],
      [
-      "Kimi K3",
-      "API",
-      "Kimi K3",
-      "开放权重 / 低价",
-      "海量日常任务的降本后端"
+      "Aider",
+      "CLI",
+      "任意（含本地）",
+      "开源",
+      "老仓库渐进式重构、每步可回滚"
      ],
      [
       "Trae",
@@ -504,7 +504,43 @@
     "cap": "▚ 表 1-1 · 十四款编程助手横向速览（价格为 2026-10 参考值）"
    },
    "verdict": null,
-   "decide": null,
+   "decide": {
+    "title": "▚ 选型决策单 · 你的场景是？",
+    "rows": [
+     {
+      "need": "大仓库跨文件重构，改完还要自己跑测试",
+      "pick": "<b>Claude Code</b> · 子智能体 + Hooks + Skills，工程闭环最完整"
+     },
+     {
+      "need": "全职开发主力 IDE，要补全也要 Agent",
+      "pick": "<b>Cursor</b> · Tab 补全与 Composer 双引擎，生态最成熟"
+     },
+     {
+      "need": "派活给云端，收 PR 回来",
+      "pick": "<b>Codex CLI</b> 或 <b>Devin</b> · 沙箱异步跑，结果以 PR 交付"
+     },
+     {
+      "need": "公司规定代码不出网",
+      "pick": "<b>OpenCode / Cline + 本地模型</b> · 开源可私有化，后端随你换"
+     },
+     {
+      "need": "预算为零，中文需求为主",
+      "pick": "<b>Trae / CodeBuddy</b> · 免费且中文理解好，后者还能打通云开发"
+     },
+     {
+      "need": "老仓库渐进式重构，要求每步可回滚",
+      "pick": "<b>Aider</b> · 每次改动一个 commit，/undo 随时退回"
+     },
+     {
+      "need": "多智能体协同、定时任务与人工接管",
+      "pick": "<b>Google Antigravity</b> · 平台化编排，支持 Managed Agents"
+     },
+     {
+      "need": "只想把日常脚本与 SQL 的账单压下来",
+      "pick": "<b>Kimi K3 / DeepSeek V4 当后端</b> · 塞进任意工具，成本降一个数量级"
+     }
+    ]
+   },
    "rank": null,
    "top10": null,
    "arch": null
@@ -705,41 +741,48 @@
     "head": [
      "维度",
      "OpenClaw",
-     "Hermes"
+     "Hermes",
+     "Dots"
     ],
     "rows": [
      [
       "定位",
       "个人 / 极客的本地智能体",
-      "企业生产级多智能体编排"
+      "企业生产级多智能体编排",
+      "OpenAI 官方全天候个人 Agent"
      ],
      [
       "部署形态",
       "单机脚本安装，IM 网关接入",
-      "pip / 容器，服务化常驻"
+      "pip / 容器，服务化常驻",
+      "云端托管，ChatGPT 内创建"
      ],
      [
       "上手曲线",
       "半小时跑通，技能即装即用",
-      "需理解 DAG / 角色 / 权限模型"
+      "需理解 DAG / 角色 / 权限模型",
+      "零配置，一句话开任务"
      ],
      [
       "多智能体",
       "单主体 + 技能扩展",
-      "原生多角色协作与调度"
+      "原生多角色协作与调度",
+      "单主体后台异步推进"
      ],
      [
       "可观测 / 审计",
       "本地日志为主",
-      "全链路 Trace、审批留痕、回滚"
+      "全链路 Trace、审批留痕、回滚",
+      "任务时间线与进度回报"
      ],
      [
       "适合谁",
       "个人助理、家庭自动化、极客玩具",
-      "内容流水线、客服工厂、流程自动化"
+      "内容流水线、客服工厂、流程自动化",
+      "长线任务、早报 / 盯竞品 / 资料整理"
      ]
     ],
-    "cap": "▚ 表 3-1 · OpenClaw vs Hermes 六维对比"
+    "cap": "▚ 表 3-1 · OpenClaw / Hermes / Dots 三维对比"
    },
    "verdict": {
     "title": "▚ 适用场景结论 · VERDICT",
@@ -1211,17 +1254,17 @@
      "ico": "即",
      "name": "即梦 Seedance 2.5",
      "sub": "字节跳动 · 多镜头叙事 + 极致性价比",
-    "chips": [
-     {
-      "kind": "k-kind",
-      "text": "Web/小程序"
-     },
-     {
-      "kind": "k-free",
-      "text": "免费额度"
-     }
-    ],
-    "intro": "字节自研视频引擎：2026 年 7 月发布的 Seedance 2.5 支持原生直出 30 秒视频与多模态参考素材，舞蹈 / 音乐卡点类内容生成效果拔群，多镜头自动叙事，出片快、价格低，与剪映 / 抖音生态无缝衔接。",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "Web/小程序"
+      },
+      {
+       "kind": "k-free",
+       "text": "免费额度"
+      }
+     ],
+     "intro": "字节自研视频引擎：2026 年 7 月发布的 Seedance 2.5 支持原生直出 30 秒视频与多模态参考素材，舞蹈 / 音乐卡点类内容生成效果拔群，多镜头自动叙事，出片快、价格低，与剪映 / 抖音生态无缝衔接。",
      "config": [
       {
        "type": "list",
@@ -1322,10 +1365,38 @@
       "免费+订阅"
      ]
     ],
-    "cap": "▚ 表 5-1 · 视频生成引擎参数速览（2026-08 参考）"
+    "cap": "▚ 表 5-1 · 视频生成引擎参数速览（2026-10 参考）"
    },
    "verdict": null,
-   "decide": null,
+   "decide": {
+    "title": "▚ 谁拍广告、谁做短剧、谁出特效？",
+    "rows": [
+     {
+      "need": "品牌广告片，物理细节要经得起看",
+      "pick": "<b>Sora 2.0</b> · 物理一致性顶级，Storyboard 可逐帧控镜头"
+     },
+     {
+      "need": "古风 / 美食等中文场景短剧",
+      "pick": "<b>可灵 3.0</b> · 中文提示词与东方场景最懂行，元素跨镜头锁脸锁服装"
+     },
+     {
+      "need": "带对白、口型必须对齐的成片",
+      "pick": "<b>Veo 3.1</b> · 原生对白与环境音，口型自动同步，胶片质感"
+     },
+     {
+      "need": "已有实拍素材，要接进专业剪辑管线",
+      "pick": "<b>Runway Gen-4.5</b> · References 多参考图 + Director Mode 运镜，4K 直出"
+     },
+     {
+      "need": "批量测款，压缩单条成本",
+      "pick": "<b>即梦 Seedance 2.5</b> · 30 秒直出 + 多镜头自动叙事，免费额度够用"
+     },
+     {
+      "need": "社媒爆款特效与丝滑转场空镜",
+      "pick": "<b>Vidu / Pika / Luma</b> · 参考生视频 / 特效模板 / 首尾帧插值各取所需"
+     }
+    ]
+   },
    "rank": null,
    "top10": null,
    "arch": null
@@ -1677,8 +1748,239 @@
    "arch": null
   },
   {
-   "id": "models",
+   "id": "music",
    "num": "07",
+   "emoji": "🎵",
+   "title": "AI 音乐生成",
+   "desc": "5 款音乐引擎的曲风边界与商用授权红线，附一份「按用途选工具」决策单",
+   "acc": "--acc:#d946ef",
+   "tools": [
+    {
+     "search": "suno ai 音乐 歌曲 生成 人声 编曲 商用 短视频配乐",
+     "ico": "Su",
+     "name": "Suno V6",
+     "sub": "AI 歌曲生成 · 人声与编曲一步到位",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "Web/App"
+      },
+      {
+       "kind": "k-paid",
+       "text": "$10/月起"
+      }
+     ],
+     "intro": "出歌速度最快的音乐引擎：一句风格描述或一段歌词即可产出带人声、编曲与混音的完整歌曲。V6 把单曲时长上限提升到 8 分钟，并支持用段落标签控制主歌 / 副歌 / Bridge 的走向，曲风模板覆盖流行、说唱、国风与电子，是短视频配乐与 Demo 创作的第一入口。",
+     "config": [
+      {
+       "type": "code",
+       "lang": "suno · Custom 模式",
+       "code": "[Verse]\n窗外雨落下的声音 / 提醒我又一个清晨\n[Chorus]\n就让它下吧 / 反正我也没打算出门\n\nStyle: 国风流行, 女声, 钢琴 + 古筝, 80 BPM\n# 建议：先勾 Instrumental 出纯伴奏，满意后再叠人声"
+      }
+     ],
+     "case": "短视频配乐测款：为一款新茶饮写 12 条不同曲风的 30 秒副歌片段，当天投放测款，跑出 2 条高完播率素材，单条成本不到一杯奶茶。"
+    },
+    {
+     "search": "udio 音乐 生成 编曲 音质 英文 乐器分离 重混",
+     "ico": "Ud",
+     "name": "Udio",
+     "sub": "编曲质感优先 · 英文歌曲见长",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "Web"
+      },
+      {
+       "kind": "k-paid",
+       "text": "$10/月起"
+      }
+     ],
+     "intro": "由前 Google DeepMind 音乐团队成员打造，乐器分离度与人声质感在同类中口碑最好，支持对已生成片段做延长、重混与分段编辑。英文歌曲的咬字与气息明显更自然，适合对成品音质有要求的创作者。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "udio.com 注册，Manual 模式可自定义歌词与结构标签；",
+        "用 [Verse] / [Chorus] / [Outro] 标签控制段落，并可指定主导乐器；",
+        "生成后用 Extend 延长、Remix 重混；付费订阅生成结果可商用。"
+       ]
+      }
+     ],
+     "case": "独立游戏 OST：为一款像素风独立游戏生成 8 首关卡 BGM，按场景指定乐器与 BPM，成片直接导进 Unity，音频预算从六位数压到几百块。"
+    },
+    {
+     "search": "mureka 昆仑万维 音乐 中文 音色克隆 api 批量出歌",
+     "ico": "Mu",
+     "name": "Mureka O2",
+     "sub": "昆仑万维 · 中文歌曲与音色克隆",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "Web/API"
+      },
+      {
+       "kind": "k-paid",
+       "text": "会员制"
+      }
+     ],
+     "intro": "国内音乐大模型的代表：中文咬字与声调处理明显优于海外同类，支持上传参考音频克隆特定音色，还能按情绪 / 曲风 / 乐器做细粒度控制。开放 API 可接入自有产品批量出歌，是国内做音乐类应用的首选底座。",
+     "config": [
+      {
+       "type": "code",
+       "lang": "bash · 开放平台 API",
+       "code": "curl https://api.mureka.ai/v1/songs \\\n  -H \"Authorization: Bearer $MUREKA_KEY\" \\\n  -d '{\"lyrics\": \"...\", \"style\": \"国风\", \"voice\": \"clone_01\"}'\n# 音色克隆：上传 30s 干声 → 拿到 voice_id 后全项目复用"
+      }
+     ],
+     "case": "方言民谣专辑：用一段 30 秒方言干声克隆音色，批量生成 10 首方言民谣小样，咬字与腔调的保留度让本地文化站直接采用。"
+    },
+    {
+     "search": "海绵音乐 字节 剪映 抖音 bgm 短视频 配乐 卡点",
+     "ico": "海",
+     "name": "海绵音乐",
+     "sub": "字节跳动 · 短视频 BGM 直通抖音",
+     "chips": [
+      {
+       "kind": "k-kind",
+       "text": "小程序/Web"
+      },
+      {
+       "kind": "k-free",
+       "text": "免费额度"
+      }
+     ],
+     "intro": "字节出品的中文音乐生成工具，与剪映 / 抖音生态无缝衔接：输入一句场景描述即可产出匹配时长的 BGM，还能按视频时长自动对齐节拍点，是国内短视频创作者的主力工具。",
+     "config": [
+      {
+       "type": "list",
+       "items": [
+        "微信 / 抖音搜索「海绵音乐」小程序，或从剪映「AI 音乐」入口进入；",
+        "输入场景描述 + 选择情绪与时长，一次给多版候选；",
+        "生成结果一键导入剪映，音频自动对齐视频节拍点。"
+       ]
+      }
+     ],
+     "case": "探店视频配乐：为 30 条探店素材批量生成匹配时长与情绪的 BGM，导出后自动卡点，剪辑耗时从两天压到两小时。"
+    },
+    {
+     "search": "ace-step 开源 音乐 本地部署 编曲 微调 私有化",
+     "ico": "AS",
+     "name": "ACE-Step",
+     "sub": "开源 · 本地可控的编曲基座",
+     "chips": [
+      {
+       "kind": "k-oss",
+       "text": "开源免费"
+      },
+      {
+       "kind": "k-kind",
+       "text": "本地部署"
+      }
+     ],
+     "intro": "阶跃星辰与 ACE Studio 联合开源的音乐基座模型：支持文本生成旋律、歌词对齐与多轨分离，推理速度快、显存占用低，消费级显卡即可运行。开源协议允许商用，是需要私有化与二次开发的团队首选。",
+     "config": [
+      {
+       "type": "code",
+       "lang": "bash",
+       "code": "git clone https://github.com/ace-step/ACE-Step.git\ncd ACE-Step && pip install -r requirements.txt\npython infer.py --prompt \"国风, 古筝, 竹笛, 72 BPM\" --duration 120\n# 支持 LoRA 微调自有曲风，权重与训练脚本均已开源"
+      }
+     ],
+     "case": "酒店背景音系统：本地部署 ACE-Step，按大堂 / 走廊 / 客房三种场景微调曲风，24 小时不间断生成不重复的舒缓配乐，音频数据全程不出内网。"
+    }
+   ],
+   "table": {
+    "head": [
+     "引擎",
+     "人声",
+     "时长上限",
+     "中文歌曲",
+     "商用授权",
+     "参考价"
+    ],
+    "rows": [
+     [
+      "Suno V6",
+      "✓ 含人声",
+      "8 分钟",
+      "★★★☆",
+      "付费订阅可商用",
+      "$10/月起"
+     ],
+     [
+      "Udio",
+      "✓ 含人声",
+      "2 分钟+",
+      "★★☆",
+      "付费订阅可商用",
+      "$10/月起"
+     ],
+     [
+      "Mureka O2",
+      "✓ 含人声",
+      "5 分钟",
+      "★★★★★",
+      "会员可商用",
+      "会员制"
+     ],
+     [
+      "海绵音乐",
+      "✓ 含人声",
+      "3 分钟",
+      "★★★★",
+      "平台规则内可商用",
+      "免费额度"
+     ],
+     [
+      "ACE-Step",
+      "△ 需配人声",
+      "4 分钟",
+      "★★★",
+      "开源协议",
+      "自部署免费"
+     ]
+    ],
+    "cap": "▚ 表 7-1 · 五大音乐引擎能力矩阵（价格为 2026-10 参考值）"
+   },
+   "verdict": {
+    "title": "▚ 一句话总结 · TL;DR",
+    "paras": [
+     "✅ <b>先问清「能不能商用」</b>：免费额度生成的音频大多仅限个人使用，投放前务必确认授权等级；",
+     "✅ <b>人声与伴奏分开做</b>：先出纯音乐定编曲，满意后再叠人声，比一次成型可控得多；",
+     "✅ <b>中文咬字看 Mureka O2 与海绵音乐</b>，英文与编曲质感看 Suno V6 / Udio；",
+     "✅ 需要私有化就上 <b>ACE-Step</b>，接本地 TTS 可打通整条音频流水线。"
+    ]
+   },
+   "decide": {
+    "title": "▚ 选型决策单 · 你要做什么音乐？",
+    "rows": [
+     {
+      "need": "完整歌曲，人声 + 编曲一步到位",
+      "pick": "<b>Suno V6</b> · 出歌最快，曲风模板最丰富"
+     },
+     {
+      "need": "编曲细节与音质优先，英文歌曲",
+      "pick": "<b>Udio</b> · 乐器分离与人声质感更精致"
+     },
+     {
+      "need": "中文流行、要克隆特定音色",
+      "pick": "<b>Mureka O2</b> · 中文咬字与音色克隆领先"
+     },
+     {
+      "need": "短视频 BGM，要快要便宜",
+      "pick": "<b>海绵音乐</b> · 与剪映 / 抖音生态直连"
+     },
+     {
+      "need": "数据不出内网、要可控编曲",
+      "pick": "<b>ACE-Step</b> · 开源自部署，可微调曲风"
+     }
+    ]
+   },
+   "rank": null,
+   "top10": null,
+   "arch": null
+  },
+  {
+   "id": "models",
+   "num": "08",
    "emoji": "🧠",
    "title": "主流大模型",
    "desc": "11 款主流大模型的能力速览与六维排行榜",
@@ -1799,7 +2101,7 @@
        "text": "峰谷定价"
       }
      ],
-     "intro": "延续「白菜价旗舰」路线：稀疏注意力大幅压低长上下文成本，数学与代码推理逼近第一梯队，开放权重可自由蒸馏微调。计费方面 2026-08-17 起实施峰谷定价（工作日高峰 9-12 点 / 14-18 点，闲时半价），8-23 起周六日全天统一按低谷价计费。",
+     "intro": "延续「白菜价旗舰」路线：稀疏注意力大幅压低长上下文成本，数学与代码推理逼近第一梯队，开放权重可自由蒸馏微调。计费方面 2026 年 8 月 17 日起实施峰谷定价（工作日高峰 9-12 点 / 14-18 点，闲时半价），8 月 23 日起周六日全天统一按低谷价计费。",
      "config": [
       {
        "type": "code",
@@ -1849,7 +2151,7 @@
        "text": "Scout/Maverick"
       }
      ],
-     "intro": "Scout（17B-A17B MoE）单卡 H100 即可跑，上下文高达 10M token；Maverick（400B-A17B）对标旗舰；Behemoth（超 4000B）仍在训练未公开。开放许可让全球开发者自由商用与二次开发，生态厚度无敌。",
+     "intro": "Scout（17B-A17B MoE）单卡 H100 即可跑，上下文高达 10M token；Maverick（400B-A17B）对标闭源旗舰，是开源阵营的性能基座。开放许可允许自由商用与二次开发，社区微调版本（中文增强 / 行业版）在 HuggingFace 上数以千计，生态厚度仍是开源之最。",
      "config": [
       {
        "type": "code",
@@ -1924,7 +2226,7 @@
        "text": "≈$0.5 起/百万 token"
       }
      ],
-     "intro": "MiniMax 于 2026 年 3 月发布的 M2.7：MoE 架构、百万 token 上下文，通过 multi-agent 协作面向真实世界生产力，在 OpenRouter 长期位居调用量榜首；性能接近 Claude Opus 4.6 而价格极低，公司 ARR 已超 8 亿美元。",
+     "intro": "MiniMax 于 2026 年 3 月发布的 M2.7：MoE 架构、百万 token 上下文，通过 multi-agent 协作面向真实世界生产力，在 OpenRouter 长期位居调用量榜首；性能接近 Claude Opus 5.5 而价格极低，公司 ARR 已超 8 亿美元。",
      "config": [
       {
        "type": "code",
@@ -1949,7 +2251,7 @@
        "text": "免费额度"
       }
      ],
-     "intro": "火山引擎 2026 年 6 月 23 日发布的豆包大模型 2.1 系列，旗舰版 Doubao-Seed-2.1-Pro 多项基准比肩 GPT-5.5；已接入特斯拉车机，8 月字节将 Trae 与 Coze 团队并入豆包体系，是中文互联网渗透率最高的模型矩阵。",
+     "intro": "火山引擎 2026 年 6 月 23 日发布的豆包大模型 2.1 系列，旗舰版 Doubao-Seed-2.1-Pro 多项基准比肩 GPT-6.1 Sol；已接入特斯拉车机，8 月字节将 Trae 与 Coze 团队并入豆包体系，是中文互联网渗透率最高的模型矩阵。",
      "config": [
       {
        "type": "list",
@@ -1973,7 +2275,7 @@
     ],
     "rows": [
      [
-      "GPT-6.1 / Astra",
+      "GPT-6.1 / GPT-6 Astra",
       "1.1M",
       "4 起 / 按量",
       "✗",
@@ -2050,9 +2352,17 @@
       "中文生态、C 端渗透"
      ]
     ],
-    "cap": "▚ 表 7-1 · 十一款主流大模型参数速览（价格为 2026-10 参考值）"
+    "cap": "▚ 表 8-1 · 十一款主流大模型参数速览（价格为 2026-10 参考值）"
    },
-   "verdict": null,
+   "verdict": {
+    "title": "▚ 组合推荐 · PLAYBOOK",
+    "paras": [
+     "✅ <b>旗舰干难活</b> → Claude 5.5（编程与长任务）、GPT-6.1 Sol（工具链与 computer use）、Gemini 4 Argon（超长上下文与多模态）；",
+     "✅ <b>开源跑量</b> → Qwen 3.8（中文与私有化）、DeepSeek V4（推理性价比）、Kimi K3（Agent 蜂群与百万上下文）；",
+     "✅ <b>再降一档成本</b> → MiniMax M2.7 与 GLM-5.3，性能逼近闭源旗舰而单价低一个数量级；",
+     "✅ 实操建议：<b>日常 80% 请求走开源、20% 硬骨头走旗舰</b>，用 OpenRouter / LiteLLM 做统一网关并配置自动降级。"
+    ]
+   },
    "decide": null,
    "rank": {
     "cards": [
@@ -2061,17 +2371,14 @@
       "en": "CODING",
       "rows": [
        {
-        "rank": 0,
         "name": "Claude 5.5",
         "score": 97
        },
        {
-        "rank": 0,
         "name": "GPT-6.1",
         "score": 93
        },
        {
-        "rank": 0,
         "name": "DeepSeek V4",
         "score": 88
        }
@@ -2082,17 +2389,14 @@
       "en": "REASONING",
       "rows": [
        {
-        "rank": 0,
         "name": "GPT-6.1",
         "score": 96
        },
        {
-        "rank": 0,
         "name": "Gemini 4 Argon",
         "score": 92
        },
        {
-        "rank": 0,
         "name": "DeepSeek V4",
         "score": 90
        }
@@ -2103,17 +2407,14 @@
       "en": "LONG CONTEXT",
       "rows": [
        {
-        "rank": 0,
         "name": "Llama 4 Scout",
         "score": 98
        },
        {
-        "rank": 0,
         "name": "Gemini 4 Argon",
         "score": 95
        },
        {
-        "rank": 0,
         "name": "Claude 5.5",
         "score": 90
        }
@@ -2124,17 +2425,14 @@
       "en": "MULTIMODAL",
       "rows": [
        {
-        "rank": 0,
         "name": "Gemini 4 Argon",
         "score": 96
        },
        {
-        "rank": 0,
         "name": "GPT-6.1",
         "score": 93
        },
        {
-        "rank": 0,
         "name": "Llama 4",
         "score": 86
        }
@@ -2145,17 +2443,14 @@
       "en": "COST-EFFICIENCY",
       "rows": [
        {
-        "rank": 0,
         "name": "DeepSeek V4",
         "score": 98
        },
        {
-        "rank": 0,
         "name": "Qwen 3.8",
         "score": 94
        },
        {
-        "rank": 0,
         "name": "Kimi K3",
         "score": 91
        }
@@ -2166,31 +2461,28 @@
       "en": "CHINESE",
       "rows": [
        {
-        "rank": 0,
         "name": "Qwen 3.8",
         "score": 96
        },
        {
-        "rank": 0,
         "name": "DeepSeek V4",
         "score": 94
        },
        {
-        "rank": 0,
         "name": "Kimi K3",
         "score": 92
        }
       ]
      }
     ],
-    "cap": "▚ 图 7-1 · 六维能力排行榜（编辑部分数，满分 100，仅供选型参考）"
+    "cap": "▚ 图 8-1 · 六维能力排行榜（编辑部分数，满分 100，仅供选型参考）"
    },
    "top10": null,
    "arch": null
   },
   {
    "id": "eco",
-   "num": "08",
+   "num": "09",
    "emoji": "🔌",
    "title": "插件与生态",
    "desc": "MCP 协议、Skills 技能系统、双 TOP 10 必装清单、市场对比与能力栈架构图",
@@ -2351,7 +2643,7 @@
       "企业集成、工具厂商"
      ]
     ],
-    "cap": "▚ 表 8-1 · 六大技能市场横向对比（2026-08 生态观察）"
+    "cap": "▚ 表 9-1 · 六大技能市场横向对比（2026-10 生态观察）"
    },
    "verdict": {
     "title": "▚ 一句话总结 · TL;DR",
@@ -2369,7 +2661,7 @@
      {
       "title": "🔌 MCP SERVERS · TOP 10",
       "small": "按装机量与实用性排序 · 点击命令复制",
-      "note": "▸ 统一配置入口：claude mcp add <name> -- <command> 或编辑 claude_desktop_config.json，详见上方协议卡片",
+      "note": "▸ 通用配置入口：claude mcp add <name> -- <command>，或把同一份 mcpServers 写进 Cursor / CodeBuddy / OpenCode / Cline 各自的配置，详见上方协议卡片",
       "items": [
        {
         "no": 1,
@@ -2446,7 +2738,7 @@
      {
       "title": "🧩 AGENT SKILLS · TOP 10",
       "small": "anthropics/skills 官方仓库精选 · 点击路径复制",
-      "note": "▸ 安装：git clone https://github.com/anthropics/skills → 将所需目录复制到 ~/.claude/skills/ 即生效",
+      "note": "▸ 安装：git clone https://github.com/anthropics/skills → 将所需目录复制到 ~/.claude/skills/ 即生效（Skills 是开放格式，CodeBuddy / OpenCode 等 Host 放到各自 skills 目录同样可用）",
       "items": [
        {
         "no": 1,
@@ -2521,7 +2813,7 @@
       ]
      }
     ],
-    "cap": "▚ 表 8-0 · 双 TOP 10 必装清单（2026-08 社区热度与实用性综合排序）"
+    "cap": "▚ 表 9-0 · 双 TOP 10 必装清单（2026-10 社区热度与实用性综合排序）"
    },
    "arch": {
     "layers": [
@@ -2594,7 +2886,7 @@
   },
   {
    "id": "platforms",
-   "num": "09",
+   "num": "10",
    "emoji": "🌐",
    "title": "线上大模型服务平台",
    "desc": "许多平台提供大模型 API 服务：注册、充值并创建 API-Key，即可用 API-Key 与 URL 调用平台提供的模型服务。",
@@ -2690,15 +2982,55 @@
      [
       "MiniMax 开放平台",
       "https://platform.minimaxi.com/",
-      "MiniMax M2 系列官方"
+      "MiniMax M2.7 系列官方"
      ],
      [
       "xAI",
       "https://console.x.ai/",
       "Grok 系列官方"
+     ],
+     [
+      "Together AI",
+      "https://www.together.ai/",
+      "开源模型推理，Llama / Qwen 生态"
+     ],
+     [
+      "Fireworks AI",
+      "https://fireworks.ai/",
+      "高速推理与微调部署"
+     ],
+     [
+      "Replicate",
+      "https://replicate.com/",
+      "开源模型托管，按秒计费"
+     ],
+     [
+      "Hugging Face",
+      "https://huggingface.co/",
+      "开源模型中心 + Inference API"
+     ],
+     [
+      "Cloudflare Workers AI",
+      "https://developers.cloudflare.com/workers-ai/",
+      "边缘推理，全球低延迟"
+     ],
+     [
+      "NVIDIA NIM",
+      "https://build.nvidia.com/",
+      "NVIDIA 官方微服务，企业级部署"
+     ],
+     [
+      "AWS Bedrock",
+      "https://aws.amazon.com/bedrock/",
+      "亚马逊云，多模型统一接入"
+     ],
+     [
+      "Azure AI Foundry",
+      "https://ai.azure.com/",
+      "微软云，OpenAI 与开源模型"
      ]
     ],
-    "cap": "▚ 表 9-1 · 线上大模型服务平台速览"
+    "cap": "▚ 表 10-1 · 线上大模型服务平台速览"
    },
    "verdict": null,
    "decide": null,

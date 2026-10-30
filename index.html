@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 工具全景图 · 从编程助手到能力全景</title>
-<meta name="description" content="9 大板块、56 款 AI 工具全景地图：编程助手、办公智能体、智能体框架、图像/视频/语音生成、主流大模型、MCP/Skills 插件生态与线上服务平台，含选型决策表、能力排行与完整能力栈架构图。">
+<meta name="description" content="10 大板块、61 款 AI 工具全景地图：编程助手、办公智能体、智能体框架、图像/视频/语音/音乐生成、主流大模型、MCP/Skills 插件生态与线上服务平台，含选型决策表、能力排行与完整能力栈架构图。">
 <meta name="keywords" content="AI工具,AI编程助手,Claude Code,Cursor,GPT-6.1,大模型,智能体,MCP,Skills,图像生成,视频生成,语音合成">
 <meta name="author" content="AI 工具全景图">
 <meta name="theme-color" content="#10b981">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI 工具全景图 · 从编程助手到能力全景">
-<meta property="og:description" content="9 大板块、56 款 AI 工具，从编程助手到能力栈架构的交互式全景地图。">
+<meta property="og:description" content="10 大板块、61 款 AI 工具，从编程助手到能力栈架构的交互式全景地图。">
 <meta property="og:site_name" content="AI 工具全景图">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI 工具全景图 · 从编程助手到能力全景">
-<meta name="twitter:description" content="9 大板块、56 款 AI 工具，从编程助手到能力栈架构的交互式全景地图。">
+<meta name="twitter:description" content="10 大板块、61 款 AI 工具，从编程助手到能力栈架构的交互式全景地图。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -734,7 +734,7 @@ li.r1 .rk{color:#f59e0b}li.r2 .rk{color:#94a3b8}li.r3 .rk{color:#ea580c}
 <script>
 /* 单一数据源：从外部 aihot_data.json 加载，便于独立维护数据 */
 let DATA = [];
-let META = { version: '', updated: '', tools: 0, cmds: 0, cases: 0 };
+let META = { version: '', updated: '', tools: 0, cmds: 0, list: 0 };
 
 async function loadData(){
   try {
@@ -766,9 +766,9 @@ async function loadData(){
   }
   initApp();
 }
-const COLORS = {"coding": "#3b82f6", "office": "#14b8a6", "agents": "#f97316", "image": "#ec4899", "video": "#8b5cf6", "voice": "#06b6d4", "models": "#ef4444", "eco": "#10b981", "platforms": "#ca8a04"};
-const ICONS  = {"coding": "\ud83d\udcbb", "office": "\ud83c\udfe2", "agents": "\ud83e\udd16", "image": "\ud83c\udfa8", "video": "\ud83c\udfac", "voice": "\ud83d\udd0a", "models": "\ud83e\udde0", "eco": "\ud83d\udd0c", "platforms": "\ud83c\udf10"};
-const TAGS   = {"coding": "\u6838\u5fc3\u677f\u5757", "office": "\u90e8\u7f72\u6307\u5357", "agents": "\u5bf9\u6bd4\u9009\u578b", "image": "\u51b3\u7b56\u53c2\u8003", "video": "\u53c2\u6570\u901f\u89c8", "voice": "\u6a2a\u8bc4\u63a8\u8350", "models": "\u516d\u7ef4\u6392\u884c", "eco": "\u751f\u6001\u5fc5\u88c5", "platforms": "\u5e73\u53f0\u901f\u67e5"};
+/* 板块配色 / 标签：优先取 JSON 的 acc 与 emoji，此处仅作缺省回退 */
+const COLORS = {"coding": "#3b82f6", "office": "#14b8a6", "agents": "#f97316", "image": "#ec4899", "video": "#8b5cf6", "voice": "#06b6d4", "music": "#d946ef", "models": "#ef4444", "eco": "#10b981", "platforms": "#ca8a04"};
+const TAGS   = {"coding": "\u6838\u5fc3\u677f\u5757", "office": "\u90e8\u7f72\u6307\u5357", "agents": "\u5bf9\u6bd4\u9009\u578b", "image": "\u51b3\u7b56\u53c2\u8003", "video": "\u53c2\u6570\u901f\u89c8", "voice": "\u6a2a\u8bc4\u63a8\u8350", "music": "\u66f2\u98ce\u901f\u89c8", "models": "\u516d\u7ef4\u6392\u884c", "eco": "\u751f\u6001\u5fc5\u88c5", "platforms": "\u5e73\u53f0\u901f\u67e5"};
 const STATS_ICONS = ["<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/>", "<path d=\"M2 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7z\"/>", "<polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/>", "<path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 5.5 2 .6 3 1.5 3 3.5a5.5 5.5 0 1 1-11 0z\"/>"];
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -883,7 +883,7 @@ function render(){
     [DATA.length, '', '核心板块', 'TRACKS'],
     [META.tools, '', '收录工具', 'TOOLS'],
     [META.cmds, '+', '可执行命令', 'COMMANDS'],
-    [META.cases, '+', '实战案例', 'CASES']
+    [META.list, '', '必装清单', 'CHECKLIST']
   ].map((x,i)=>{
     const [n, suf, zh, en] = x;
     return `<div class="stat s${i+1}">
@@ -896,9 +896,9 @@ function render(){
   }).join('');
 
   $('#main-sections').innerHTML = DATA.map(s=>{
-    const c = COLORS[s.id] || '#10b981';
+    const c = (s.acc && String(s.acc).split(':').pop()) || COLORS[s.id] || '#10b981';
     const tools = s.tools.map(t=>toolCard(t)).join('');
-    return `<section class="sec card s${s.num[1]}" id="${s.id}" style="--acc:${c}">
+    return `<section class="sec card s${parseInt(s.num, 10)}" id="${s.id}" style="--acc:${c}">
       <header class="sec-head reveal">
         <div class="sec-num">${s.num}</div>
         <div class="sec-tt">
@@ -936,7 +936,8 @@ function calcMeta(){
     updated: META.updated || '2026-08-29',
     tools: DATA.reduce((a,s)=>a+s.tools.length,0),
     cmds:  DATA.reduce((a,s)=>a+s.tools.reduce((x,t)=>x+t.config.filter(b=>b.type==='code').length,0),0),
-    cases: DATA.reduce((a,s)=>a+s.tools.length,0)
+    /* 「必装清单」= MCP / Skills 双 TOP 10 的条目总数；原先第四格沿用工具数，与「收录工具」重复 */
+    list:  DATA.reduce((a,s)=>a+(s.top10 ? s.top10.cols.reduce((x,c)=>x+c.items.length,0) : 0),0)
   };
 }
 
